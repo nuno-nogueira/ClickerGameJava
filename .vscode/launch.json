@@ -1,0 +1,12 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"vmArgs": "--module-path \"c:/Users/nunon/Desktop/freeCodeCamp/Java/Projects/CookieClickerJava/lib\" --add-modules javafx.controls,javafx.fxml -Dprism.order=sw -Dprism.forceGPU=false -Dprism.verbose=true -Djavafx.verbose=true -Djava.library.path=\"C:/Users/nunon/javafx-sdk-25.0.2/bin\" --enable-native-access=javafx.graphics",
+			"type": "java",
+			"name": "Launch App",
+			"request": "launch",
+			"mainClass": "com.clickergame.app.App",
+		}
+	]
+}
