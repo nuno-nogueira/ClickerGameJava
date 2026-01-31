@@ -1,3 +1,3 @@
-## Cookie Clicker (Java)!
+# Cookie Clicker (Java)!
 
-### WIP
+## WIP
