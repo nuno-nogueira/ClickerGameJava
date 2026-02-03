@@ -1,14 +1,19 @@
-package com.clickergame.core; 
+package com.clickergame.core;
+
+import com.clickergame.systems.Building;
+import com.clickergame.systems.Upgrade;
 
 public  class GameState{
     private int clicks = 1;
     private int coins = 0;
-    private BuildingSystem upgradeSystem = new BuildingSystem();
+    private BuildingSystem buildingSystem = new BuildingSystem();
+    private UpgradeSystem upgradeSystem = new UpgradeSystem();
 
     // Getters
     public int GetClicks(){ return clicks; };
     public int GetCoins(){ return coins; };
-    public BuildingSystem GetUpgradeSystem() { return upgradeSystem; };
+    public BuildingSystem GetbuildingSystem() { return buildingSystem; };
+    public UpgradeSystem GetUpgradeSystem() { return upgradeSystem; };
 
     // Methods
     public int cookieClick() {
@@ -20,23 +25,47 @@ public  class GameState{
         coins += amount;
     }
 
-    public Building getUpgrade(String id) {
+    public Building getBuilding(String id) {
+        return buildingSystem.getUpgrade(id);
+    }
+
+    public Upgrade getUpgrade(String id) {
         return upgradeSystem.getUpgrade(id);
     }
 
     public Boolean canBuyUpgrade(String id) {
-        return upgradeSystem.canBuy(id, coins);
+        return buildingSystem.canBuy(id, coins);
     }
 
     public void buyUpgrade(String id) {
+        if (buildingSystem.canBuy(id, coins)) {
+            coins -= buildingSystem.getUpgrade(id).GetPrice();
+            buildingSystem.buy(id);
+        }
+    }
+
+    public void applyUpgrade(String id) {
+        /**
+         * Apply an upgrade to an user's account
+         */
+
+        // Verify if there are enough coins 
         if (upgradeSystem.canBuy(id, coins)) {
-            coins -= upgradeSystem.getUpgrade(id).GetPrice();
-            upgradeSystem.buy(id);
+            Upgrade u = upgradeSystem.getUpgrade(id);
+            coins -= u.GetPrice();
+
+            if (u.getTargetID() == "click") {
+                // Automatically multiply the click production
+                clicks = (int)(clicks * u.GetMultiplier());
+            } else {
+                upgradeSystem.buy(id, u.getTargetID());
+                buildingSystem.applyMultiplier(u.getTargetID(), u.GetMultiplier());
+            }
         }
     }
 
     public int updatePassiveIncome() {
-        int income = upgradeSystem.totalPassiveIncome();
+        int income = buildingSystem.totalPassiveIncome();
         coins += income;
         return income;
     }

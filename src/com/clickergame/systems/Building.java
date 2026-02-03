@@ -1,4 +1,4 @@
-package com.clickergame.core;
+package com.clickergame.systems;
 
 public class Building {
     private int price;
@@ -36,8 +36,10 @@ public class Building {
     }
 
     public int passiveIncome() {
-        return quantity * production;
+        return (int)(quantity * production * multiplier);
     }
 
-
+    public void applyMultiplier(double value) {
+        multiplier = value;
+    }
 }

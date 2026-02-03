@@ -3,6 +3,8 @@ package com.clickergame.core;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.clickergame.systems.Building;
+
 public class BuildingSystem {
     HashMap<String, Building> upgrades = new HashMap<String, Building>();
 
@@ -12,7 +14,7 @@ public class BuildingSystem {
         upgrades.put("grandma", new Building("Grandma", 125, 0, 3, 1.0d));
         upgrades.put("farm", new Building("Farm", 300, 0, 5, 1.0d));
         upgrades.put("mine", new Building("Mine", 750, 0, 10, 1.0d));
-        upgrades.put("factory", new Building("Factory", 2000, 0, 20, 1.0d));
+        upgrades.put("wizard", new Building("Wizard Tower", 2000, 0, 20, 1.0d));
         upgrades.put("bank", new Building("Bank", 5000, 0, 50, 1.0d));
         upgrades.put("temple", new Building("Temple", 15000, 0, 100, 1.0d));
     }
@@ -41,5 +43,9 @@ public class BuildingSystem {
 
     public Map<String, Building> getAllUpgrades() {
         return upgrades;
+    }
+
+    public void applyMultiplier(String id, double multiplier) {
+        upgrades.get(id).applyMultiplier(multiplier);
     }
 }
