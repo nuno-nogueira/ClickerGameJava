@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.TilePane?>
+
+<ScrollPane hbarPolicy="ALWAYS" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clickergame.ui.UpgradesController">
+   <content>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2580.0" prefWidth="600.0">
+         <children>
+            <TilePane fx:id="clickPane1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2480.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="clickName1" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="clickDesc1" prefHeight="18.0" prefWidth="261.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="clickPrice1" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="clickButton1" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="cursorPane1" alignment="CENTER" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2400.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="cursorName1" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="cursorDesc1" prefHeight="18.0" prefWidth="257.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0" TilePane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="cursorPrice1" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="cursorButton1" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="clickPane2" alignment="CENTER" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2320.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="clickName2" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="clickDesc2" prefHeight="18.0" prefWidth="250.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="clickPrice2" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="clickButton2" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="cursorPane2" alignment="CENTER" layoutY="300.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2240.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="cursorName2" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="cursorDesc2" prefHeight="18.0" prefWidth="266.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="cursorPrice2" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="cursorButton2" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="grandmaPane1" alignment="CENTER" layoutY="311.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2160.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="grandmaName1" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="grandmaDesc1" prefHeight="18.0" prefWidth="290.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="grandmaPrice1" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="grandmaButton1" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="cursorPane3" alignment="CENTER" layoutY="321.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2080.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="cursorName3" prefHeight="22.0" prefWidth="245.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="cursorDesc3" prefHeight="18.0" prefWidth="258.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="cursorPrice3" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="cursorButton3" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="clickPane3" alignment="CENTER" layoutY="331.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2000.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="clickName3" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="clickDesc3" prefHeight="18.0" prefWidth="314.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="clickPrice3" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="clickButton3" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="grandmaPane2" alignment="CENTER" layoutY="321.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1920.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="grandmaName2" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="grandmaDesc2" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="grandmaPrice2" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="grandmaButton2" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="farmPane1" alignment="CENTER" layoutY="331.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1840.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="farmName1" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="farmDesc1" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="farmPrice1" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="farmButton1" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="cursorPane4" alignment="CENTER" layoutY="331.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1760.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="cursorName4" prefHeight="22.0" prefWidth="245.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="cursorDesc4" prefHeight="18.0" prefWidth="258.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="cursorPrice4" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="cursorButton4" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="farmPane2" alignment="CENTER" layoutY="341.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1680.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="farmName2" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="farmDesc2" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="farmPrice2" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="farmButton2" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="grandmaPane3" alignment="CENTER" layoutY="331.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1600.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="grandmaName3" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="grandmaDesc3" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="grandmaPrice3" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="grandmaButton3" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="minePane1" alignment="CENTER" layoutY="341.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1520.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="mineName1" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="mineDesc1" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="minePrice1" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="mineButton1" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="farmPane3" alignment="CENTER" layoutY="351.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1440.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="farmName3" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="farmDesc3" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="farmPrice3" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="farmButton3" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="minePane2" alignment="CENTER" layoutY="351.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1360.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="mineName2" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="mineDesc2" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="minePrice2" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="mineButton2" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="clickPane4" alignment="CENTER" layoutY="331.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1280.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="clickName4" prefHeight="22.0" prefWidth="245.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="clickDesc4" prefHeight="18.0" prefWidth="258.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="clickPrice4" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="clickButton4" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="wizardPane1" alignment="CENTER" layoutY="341.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1200.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="wizardName1" prefHeight="22.0" prefWidth="245.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="wizardDesc1" prefHeight="18.0" prefWidth="258.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="wizardPrice1" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="wizardButton1" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="grandmaPane4" alignment="CENTER" layoutY="341.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1120.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="grandmaName4" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="grandmaDesc4" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="grandmaPrice4" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="grandmaButton4" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="wizardPane2" alignment="CENTER" layoutY="351.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1040.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="wizardName2" prefHeight="22.0" prefWidth="245.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="wizardDesc2" prefHeight="18.0" prefWidth="258.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="wizardPrice2" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="wizardButton2" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="minePane3" alignment="CENTER" layoutY="361.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="960.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="mineName3" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="mineDesc3" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="minePrice3" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="mineButton3" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="bankPane1" alignment="CENTER" layoutY="371.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="880.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="bankName1" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="bankDesc1" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="bankPrice1" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="bankButton1" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="farmPane4" alignment="CENTER" layoutY="361.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="800.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="farmName4" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="farmDesc4" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="farmPrice4" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="farmButton4" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="wizardPane3" alignment="CENTER" layoutY="351.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="720.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="wizardName3" prefHeight="22.0" prefWidth="245.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="wizardDesc3" prefHeight="18.0" prefWidth="258.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="wizardPrice3" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="wizardButton3" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="bankPane2" alignment="CENTER" layoutY="381.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="640.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="bankName2" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="bankDesc2" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="bankPrice2" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="bankButton2" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="templePane1" alignment="CENTER" layoutY="391.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="560.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="templeName1" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="templeDesc1" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="templePrice1" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="templeButton1" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="minePane4" alignment="CENTER" layoutY="371.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="480.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="mineName4" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="mineDesc4" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="minePrice4" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="mineButton4" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="bankPane3" alignment="CENTER" layoutY="381.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="400.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="bankName3" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="bankDesc3" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="bankPrice3" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="bankButton3" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="templePane2" alignment="CENTER" layoutY="401.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="320.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="templeName2" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="templeDesc2" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="templePrice2" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="templeButton2" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="wizardPane4" alignment="CENTER" layoutY="361.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="240.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="wizardName4" prefHeight="22.0" prefWidth="245.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="wizardDesc4" prefHeight="18.0" prefWidth="258.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="wizardPrice4" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="wizardButton4" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="bankPane4" alignment="CENTER" layoutY="391.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="160.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="bankName4" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="bankDesc4" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="bankPrice4" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="bankButton4" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="templePane3" alignment="CENTER" layoutY="411.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="80.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="templeName3" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="templeDesc3" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="templePrice3" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="templeButton3" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="templePane4" alignment="CENTER" layoutY="421.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="templeName4" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="templeDesc4" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
+                     <children>
+                        <Label fx:id="templePrice4" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="templeButton4" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

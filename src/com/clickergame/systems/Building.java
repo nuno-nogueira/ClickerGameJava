@@ -3,11 +3,11 @@ package com.clickergame.systems;
 public class Building {
     private int price;
     private int quantity;
-    private int production;
+    private double production;
     private String name;
     private double multiplier;
 
-    public Building(String name, int price, int quantity, int production, double multiplier){
+    public Building(String name, int price, int quantity, double production, double multiplier){
         this.price = price;
         this.quantity = 0;
         this.production = production;
@@ -18,7 +18,7 @@ public class Building {
     // Getters
     public int GetPrice(){ return price; };
     public int GetQuantity(){ return quantity; };
-    public int GetProduction(){ return production; };
+    public double GetProduction(){ return production; };
     public String GetName(){ return name; };
     public double GetMultiplier(){ return multiplier; };
 
@@ -27,7 +27,7 @@ public class Building {
 
         System.out.println(name + "upgrade bought for " + price + "! :o");
 
-        price += Math.floor(price * 1.5);
+        price += price + Math.pow(1.16, quantity);
     }
 
     public void incrementProduction(int newValue) {

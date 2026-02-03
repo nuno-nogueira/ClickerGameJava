@@ -1,15 +1,19 @@
 package com.clickergame.ui;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import javafx.scene.Node;
 
 import com.clickergame.core.GameState;
 import com.clickergame.systems.Building;
 import com.clickergame.systems.Upgrade;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 //import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -23,7 +27,7 @@ public class MainController {
     @FXML private StackPane contentPane;
     @FXML private VBox cookiePanel;
     @FXML private VBox buildingPanel;
-    @FXML private VBox upgradePanel;
+    @FXML private ScrollPane upgradePanel;
 
     @FXML  private Button cookieTabButton;
     @FXML private Button buildingTabButton;
@@ -54,22 +58,24 @@ public class MainController {
     @FXML private Label bankQuantity;
     @FXML private Label templeQuantity;
 
-    @FXML private TilePane cursorPane1;
-
-    @FXML private Button clickButton1;
-    @FXML private Label clickLabel1;
     @FXML private Label clickDesc1;
     @FXML private Label clickPrice1;
     @FXML private TilePane clickPane1;
 
-    @FXML private Label coinsLabel;
+    @FXML private Button cursorButton1;
+    @FXML private Label cursorName1;
+    @FXML private Label cursorDesc1;
+    @FXML private Label cursorPrice1;
+    @FXML private TilePane cursorPane1;
+
+    @FXML public Label coinsLabel;
     @FXML private Label coinsPerSecond;
 
     @FXML private Button upgradeButton;
 
-    //private Label clicksLabel;
     private Timeline gameLoop;
     private GameState gamestate;
+    @FXML private UpgradesController upgradesController;
 
     // Map to associate buttons with building IDs
     private Map<Button, String> buildingButtonMap = new HashMap<>();
@@ -77,9 +83,7 @@ public class MainController {
     private Map<String, Label> buildingQuantityMap = new HashMap<>();
     
     // Map to associate buttons with upgrade IDs
-    private Map<Button, String> upgradeButtonMap = new HashMap<>();
-    private Map<String, Label> upgradeLabelMap = new HashMap<>();
-    private Map<String, Label> upgradePriceMap = new HashMap<>();
+    //private Map<Button, String> upgradeButtonMap = new HashMap<>();
     private Map<String, TilePane> upgradeTileMap = new HashMap<>();
 
     @FXML
@@ -87,7 +91,17 @@ public class MainController {
         gamestate = new GameState();
         showCookiePanel();
         implementBuildings();
-        implementUpgrades();
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/clickergame/resources/fxml/UpgradesView.fxml"));
+            Node upgradesRoot = loader.load(); 
+            upgradesController = loader.getController(); 
+            upgradesController.initialize(gamestate); 
+
+            upgradePanel.setContent(upgradesRoot);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         clickButton.setText("Cookie Button!");
         coinsLabel.setText("" + gamestate.GetCoins());    
@@ -105,6 +119,15 @@ public class MainController {
         panelToShow.setManaged(true);
     }
 
+    @FXML private void showScroll(ScrollPane panelToShow) {
+        for (var node : contentPane.getChildren()) {
+            node.setVisible(false);
+            node.setManaged(false);
+        }
+        panelToShow.setVisible(true);
+        panelToShow.setManaged(true);
+    }
+
     @FXML private void showCookiePanel() {
         showPanel(cookiePanel);
     }
@@ -114,7 +137,7 @@ public class MainController {
     }
 
     @FXML private void showUpgradePanel() {
-        showPanel(upgradePanel);
+        showScroll(upgradePanel);
     }
 
     @FXML void onCookieTabClicked() {
@@ -153,7 +176,7 @@ public class MainController {
         System.out.println(id + " building officially bought!");
     }
 
-    private void updateButtons(Button button, String buttonType, String id) {
+    public void updateButtons(Button button, String buttonType, String id) {
         //gamestate.getUpgrade(entry.getValue())
         if (buttonType == "building") {
             Building building = gamestate.getBuilding(id);
@@ -180,7 +203,7 @@ public class MainController {
         }       
     }
 
-    @FXML private void buyUpgrade(String id, Button button) {
+    @FXML public void buyUpgrade(String id, Button button) {
         gamestate.applyUpgrade(id);
         updateButtons(button, "upgrade", id);
         upgradeTileMap.get(id).setVisible(false);
@@ -193,7 +216,7 @@ public class MainController {
         for (Map.Entry<Button, String> entry : buildingButtonMap.entrySet()) { //gamestate.getUpgrade(entry.getValue())
             updateButtons(entry.getKey(), "building", entry.getValue());
         }
-        for (Map.Entry<Button, String> entry : upgradeButtonMap.entrySet()) { 
+        for (Map.Entry<Button, String> entry : upgradesController.upgradeButtonMap.entrySet()) { 
             updateButtons(entry.getKey(), "upgrade", entry.getValue());
         }
         
@@ -252,25 +275,35 @@ public class MainController {
         }
     }
 
-    private void implementUpgrades() {
-        upgradeButtonMap.put(clickButton1, "click1");
-        upgradeLabelMap.put("click1", clickLabel1);
-        upgradeLabelMap.put("click1", clickDesc1);
-        upgradePriceMap.put("click1", clickPrice1);
-        upgradeTileMap.put("click1", clickPane1);
+    // private void implementUpgrades() {
+    //     upgradeButtonMap.put(clickButton1, "click1");
+    //     upgradeNameMap.put("click1", clickName1);
+    //     upgradeDescMap.put("click1", clickDesc1);
+    //     upgradePriceMap.put("click1", clickPrice1);
+    //     upgradeTileMap.put("click1", clickPane1);
 
-        for (Map.Entry<Button, String> entry : upgradeButtonMap.entrySet()) {
-            Button button = entry.getKey();
-            String upgradeId = entry.getValue();
-            Label upgradePrice = upgradePriceMap.get(upgradeId);
+    //     upgradeButtonMap.put(cursorButton1, "cursor1");
+    //     upgradeNameMap.put("cursor1", cursorName1);
+    //     upgradeDescMap.put("cursor1", cursorDesc1);
+    //     upgradePriceMap.put("cursor1", cursorPrice1);
+    //     upgradeTileMap.put("cursor1", cursorPane1);
 
-            // Add the correct price tag 
-            upgradePrice.setText(gamestate.getUpgrade(upgradeId).GetPrice() + "");
-            
-            button.setOnAction(e -> buyUpgrade(upgradeId, button));
-            updateButtons(button, "upgrade", upgradeId);
-        }
-    }
+    //     for (Map.Entry<Button, String> entry : upgradeButtonMap.entrySet()) {
+    //         Button button = entry.getKey();
+    //         String upgradeId = entry.getValue();
+    //         Label upgradePrice = upgradePriceMap.get(upgradeId);
+    //         Label upgradeName = upgradeNameMap.get(upgradeId);
+    //         Label upgradeDesc = upgradeDescMap.get(upgradeId);
+
+    //         // Add the correct label tags 
+    //         upgradePrice.setText(gamestate.getUpgrade(upgradeId).GetPrice() + "");
+    //         upgradeName.setText(gamestate.getUpgrade(upgradeId).getName() + "");
+    //         upgradeDesc.setText(gamestate.getUpgrade(upgradeId).getDescription() + "");
+
+    //         button.setOnAction(e -> buyUpgrade(upgradeId, button));
+    //         updateButtons(button, "upgrade", upgradeId);
+    //     }
+    // }
 
     private void startCursorLoop() {
     /*

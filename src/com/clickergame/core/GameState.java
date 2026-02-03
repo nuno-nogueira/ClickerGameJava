@@ -5,18 +5,18 @@ import com.clickergame.systems.Upgrade;
 
 public  class GameState{
     private int clicks = 1;
-    private int coins = 0;
+    private double coins = 1000000000000000d;
     private BuildingSystem buildingSystem = new BuildingSystem();
     private UpgradeSystem upgradeSystem = new UpgradeSystem();
 
     // Getters
     public int GetClicks(){ return clicks; };
-    public int GetCoins(){ return coins; };
+    public double GetCoins(){ return coins; };
     public BuildingSystem GetbuildingSystem() { return buildingSystem; };
     public UpgradeSystem GetUpgradeSystem() { return upgradeSystem; };
 
     // Methods
-    public int cookieClick() {
+    public double cookieClick() {
         coins += clicks;
         return coins;
     }

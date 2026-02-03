@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
@@ -30,7 +30,7 @@
                       <Button fx:id="clickButton" alignment="CENTER" onAction="#onCookie" text="Cookie Button" />
                   </children>
                </VBox>
-               <VBox fx:id="buildingPanel" alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="200.0" spacing="10.0" visible="false">
+               <VBox fx:id="buildingPanel" alignment="CENTER" prefHeight="200.0" prefWidth="200.0" spacing="10.0" visible="false">
                   <children>
                      <TilePane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefColumns="2" prefHeight="55.0" prefRows="2" prefWidth="250.0" VBox.vgrow="NEVER">
                         <children>
@@ -216,46 +216,9 @@
                      </TilePane>
                   </children>
                </VBox>
-               <VBox fx:id="upgradePanel" alignment="CENTER_LEFT" prefHeight="350.0" prefWidth="450.0" spacing="10.0">
-                  <children>
-                     <TilePane fx:id="clickPane1" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefColumns="2" prefHeight="78.0" prefRows="2" prefWidth="200.0" VBox.vgrow="NEVER">
-                        <children>
-                           <TilePane orientation="VERTICAL" prefColumns="2" prefHeight="59.0" prefRows="2" prefWidth="144.0" tileAlignment="CENTER_LEFT" TilePane.alignment="CENTER_LEFT">
-                              <children>
-                                 <Label fx:id="clickLabel1" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
-                                    <TilePane.margin>
-                                       <Insets left="5.0" />
-                                    </TilePane.margin>
-                                    <padding>
-                                       <Insets bottom="5.0" />
-                                    </padding>
-                                 </Label>
-                                 <Label fx:id="clickDesc1" prefHeight="18.0" prefWidth="150.0" text="Each click is now double!">
-                                    <TilePane.margin>
-                                       <Insets left="5.0" />
-                                    </TilePane.margin></Label>
-                              </children>
-                              <TilePane.margin>
-                                 <Insets right="60.0" />
-                              </TilePane.margin>
-                              <cursor>
-                                 <Cursor fx:constant="NONE" />
-                              </cursor>
-                           </TilePane>
-                           <TilePane alignment="TOP_RIGHT" orientation="VERTICAL" prefHeight="59.0" prefWidth="144.0" TilePane.alignment="TOP_LEFT">
-                              <children>
-                                 <Label fx:id="clickPrice1" text="Price" TilePane.alignment="TOP_RIGHT" />
-                                 <Button fx:id="clickButton1" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT">
-                                    <TilePane.margin>
-                                       <Insets />
-                                    </TilePane.margin>
-                                 </Button>
-                              </children>
-                           </TilePane>
-                        </children>
-                     </TilePane>
-                  </children>
-               </VBox>
+               <ScrollPane fx:id="upgradePanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" StackPane.alignment="CENTER" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+
+               </ScrollPane>
             </children>
          </StackPane>
       </center>
