@@ -187,7 +187,6 @@ public class UpgradesController {
     public Map<String, TilePane> upgradePaneMap = new HashMap<>();
 
     private GameState gamestate;
-    @FXML private MainController mainController = new MainController();
 
     @FXML 
     public void initialize(GameState gamestate) {
@@ -436,4 +435,5 @@ public class UpgradesController {
         upgradePaneMap.put("temple3", templePane3);
         upgradePaneMap.put("temple4", templePane4);
     }
+
 }

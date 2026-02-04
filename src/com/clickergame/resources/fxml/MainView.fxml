@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 
 <StackPane prefHeight="300.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clickergame.ui.MainController">
@@ -15,7 +14,7 @@
       <center>
          <StackPane fx:id="contentPane" prefHeight="50.0" prefWidth="400.0" BorderPane.alignment="CENTER">
             <children>
-               <VBox fx:id="cookiePanel" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" visible="false" StackPane.alignment="CENTER">
+               <VBox fx:id="cookiePanel" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" StackPane.alignment="CENTER" >
                   <children>
                      <Label fx:id="coinsLabel" alignment="TOP_CENTER" contentDisplay="TOP" text="Coins">
                         <VBox.margin>
@@ -30,191 +29,7 @@
                       <Button fx:id="clickButton" alignment="CENTER" onAction="#onCookie" text="Cookie Button" />
                   </children>
                </VBox>
-               <VBox fx:id="buildingPanel" alignment="CENTER" prefHeight="200.0" prefWidth="200.0" spacing="10.0" visible="false">
-                  <children>
-                     <TilePane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefColumns="2" prefHeight="55.0" prefRows="2" prefWidth="250.0" VBox.vgrow="NEVER">
-                        <children>
-                           <TilePane alignment="CENTER_LEFT" prefColumns="2" prefHeight="40.0" prefWidth="67.0" tileAlignment="BOTTOM_LEFT">
-                              <children>
-                                 <Label fx:id="cursorLabel" prefHeight="18.0" prefWidth="50.0" text="Cursor">
-                                    <TilePane.margin>
-                                       <Insets left="5.0" />
-                                    </TilePane.margin>
-                                 </Label>
-                              </children>
-                              <TilePane.margin>
-                                 <Insets right="60.0" />
-                              </TilePane.margin>
-                           </TilePane>
-                           <TilePane alignment="CENTER" orientation="VERTICAL" prefHeight="100.0" prefWidth="127.0">
-                              <children>
-                                 <Label fx:id="cursorQuantity" text="Price" />
-                                 <Button fx:id="cursorButton" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="CENTER_LEFT">
-                                    <TilePane.margin>
-                                       <Insets right="10.0" />
-                                    </TilePane.margin>
-                                 </Button>
-                              </children>
-                           </TilePane>
-                        </children>
-                     </TilePane>
-                     <TilePane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefColumns="2" prefHeight="55.0" prefRows="2" prefWidth="250.0">
-                        <children>
-                           <TilePane alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="67.0" tileAlignment="BOTTOM_LEFT" TilePane.alignment="CENTER">
-                              <children>
-                                 <Label fx:id="grandmaLabel" text="Grandma">
-                                    <TilePane.margin>
-                                       <Insets left="5.0" />
-                                    </TilePane.margin>
-                                 </Label>
-                              </children>
-                              <TilePane.margin>
-                                 <Insets right="60.0" />
-                              </TilePane.margin>
-                           </TilePane>
-                           <TilePane alignment="CENTER" orientation="VERTICAL" prefHeight="100.0" prefWidth="127.0">
-                              <children>
-                                 <Label fx:id="grandmaQuantity" text="Price" />
-                                 <Button fx:id="grandmaButton" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT">
-                                    <TilePane.margin>
-                                       <Insets right="10.0" />
-                                    </TilePane.margin>
-                                 </Button>
-                              </children>
-                           </TilePane>
-                        </children>
-                     </TilePane>
-                     <TilePane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="250.0" VBox.vgrow="NEVER">
-                        <children>
-                           <TilePane alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="67.0" tileAlignment="CENTER_LEFT">
-                              <children>
-                                 <Label fx:id="farmLabel" text="Farm" TilePane.alignment="CENTER_LEFT">
-                                    <TilePane.margin>
-                                       <Insets left="5.0" />
-                                    </TilePane.margin>
-                                 </Label>
-                              </children>
-                              <TilePane.margin>
-                                 <Insets right="60.0" />
-                              </TilePane.margin>
-                           </TilePane>
-                           <TilePane alignment="CENTER" orientation="VERTICAL" prefHeight="100.0" prefWidth="127.0">
-                              <children>
-                                 <Label fx:id="farmQuantity" text="Price" />
-                                 <Button fx:id="farmButton" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT">
-                                    <TilePane.margin>
-                                       <Insets right="10.0" />
-                                    </TilePane.margin>
-                                 </Button>
-                              </children>
-                           </TilePane>
-                        </children>
-                     </TilePane>
-                     <TilePane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="250.0">
-                        <children>
-                           <TilePane alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="67.0" tileAlignment="BOTTOM_LEFT">
-                              <children>
-                                 <Label fx:id="mineLabel" text="Mine" TilePane.alignment="CENTER_LEFT">
-                                    <TilePane.margin>
-                                       <Insets left="5.0" />
-                                    </TilePane.margin>
-                                 </Label>
-                              </children>
-                              <TilePane.margin>
-                                 <Insets right="60.0" />
-                              </TilePane.margin>
-                           </TilePane>
-                           <TilePane alignment="CENTER" orientation="VERTICAL" prefHeight="100.0" prefWidth="127.0">
-                              <children>
-                                 <Label fx:id="mineQuantity" text="Price" />
-                                 <Button fx:id="mineButton" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT">
-                                    <TilePane.margin>
-                                       <Insets right="10.0" />
-                                    </TilePane.margin>
-                                 </Button>
-                              </children>
-                           </TilePane>
-                        </children>
-                     </TilePane>
-                     <TilePane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="250.0">
-                        <children>
-                           <TilePane alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="67.0" tileAlignment="BOTTOM_LEFT">
-                              <children>
-                                 <Label fx:id="wizardLabel" text="Wizard" TilePane.alignment="CENTER_LEFT">
-                                    <TilePane.margin>
-                                       <Insets left="5.0" />
-                                    </TilePane.margin>
-                                 </Label>
-                              </children>
-                              <TilePane.margin>
-                                 <Insets right="60.0" />
-                              </TilePane.margin>
-                           </TilePane>
-                           <TilePane alignment="CENTER" orientation="VERTICAL" prefHeight="100.0" prefWidth="127.0">
-                              <children>
-                                 <Label fx:id="wizardQuantity" text="Price" />
-                                 <Button fx:id="wizardButton" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT">
-                                    <TilePane.margin>
-                                       <Insets right="10.0" />
-                                    </TilePane.margin>
-                                 </Button>
-                              </children>
-                           </TilePane>
-                        </children>
-                     </TilePane>
-                     <TilePane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="250.0">
-                        <children>
-                           <TilePane alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="67.0" tileAlignment="BOTTOM_LEFT">
-                              <children>
-                                 <Label fx:id="bankLabel" text="Bank" TilePane.alignment="CENTER_LEFT">
-                                    <TilePane.margin>
-                                       <Insets left="5.0" />
-                                    </TilePane.margin>
-                                 </Label>
-                              </children>
-                              <TilePane.margin>
-                                 <Insets right="60.0" />
-                              </TilePane.margin>
-                           </TilePane>
-                           <TilePane alignment="CENTER" orientation="VERTICAL" prefHeight="100.0" prefWidth="127.0">
-                              <children>
-                                 <Label fx:id="bankQuantity" text="Price" />
-                                 <Button fx:id="bankButton" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT">
-                                    <TilePane.margin>
-                                       <Insets right="10.0" />
-                                    </TilePane.margin>
-                                 </Button>
-                              </children>
-                           </TilePane>
-                        </children>
-                     </TilePane>
-                     <TilePane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="250.0">
-                        <children>
-                           <TilePane alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="67.0" tileAlignment="BOTTOM_LEFT">
-                              <children>
-                                 <Label fx:id="templeLabel" text="Temple" TilePane.alignment="CENTER_LEFT">
-                                    <TilePane.margin>
-                                       <Insets left="5.0" />
-                                    </TilePane.margin>
-                                 </Label>
-                              </children>
-                              <TilePane.margin>
-                                 <Insets right="60.0" />
-                              </TilePane.margin>
-                           </TilePane>
-                           <TilePane alignment="CENTER" orientation="VERTICAL" prefHeight="100.0" prefWidth="127.0">
-                              <children>
-                                 <Label fx:id="templeQuantity" text="Price" />
-                                 <Button fx:id="templeButton" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT">
-                                    <TilePane.margin>
-                                       <Insets right="10.0" />
-                                    </TilePane.margin>
-                                 </Button>
-                              </children>
-                           </TilePane>
-                        </children>
-                     </TilePane>
-                  </children>
+               <VBox fx:id="buildingPanel" alignment="CENTER" prefHeight="200.0" prefWidth="200.0" spacing="10.0">
                </VBox>
                <ScrollPane fx:id="upgradePanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" StackPane.alignment="CENTER" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
 
