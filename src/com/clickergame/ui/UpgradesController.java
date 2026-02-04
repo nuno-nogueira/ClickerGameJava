@@ -223,7 +223,6 @@ public class UpgradesController {
     private void buyUpgrade(String id, Button button) {
         gamestate.applyUpgrade(id);
         upgradePaneMap.get(id).setVisible(false);
-        mainController.coinsLabel.setText(gamestate.GetCoins() + " cookies");
         System.out.println(id + " upgrade officially bought!"); 
     }
 

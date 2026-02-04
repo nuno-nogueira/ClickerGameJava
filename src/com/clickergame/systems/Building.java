@@ -40,6 +40,7 @@ public class Building {
     }
 
     public void applyMultiplier(double value) {
-        multiplier = value;
+        multiplier *= value;
+        System.out.println(multiplier);
     }
 }
