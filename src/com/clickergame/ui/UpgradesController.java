@@ -44,6 +44,14 @@ public class UpgradesController {
     @FXML private Button templeButton2;
     @FXML private Button templeButton3;
     @FXML private Button templeButton4;
+    @FXML private Button critChanceButton1;
+    @FXML private Button critChanceButton2;
+    @FXML private Button critChanceButton3;
+    @FXML private Button critChanceButton4;
+    @FXML private Button critPowerButton1;
+    @FXML private Button critPowerButton2;
+    @FXML private Button critPowerButton3;
+    @FXML private Button critPowerButton4;
 
 
     @FXML private Label clickName1;
@@ -78,6 +86,15 @@ public class UpgradesController {
     @FXML private Label templeName2;
     @FXML private Label templeName3;
     @FXML private Label templeName4;
+    @FXML private Label critChanceName1;
+    @FXML private Label critChanceName2;
+    @FXML private Label critChanceName3;
+    @FXML private Label critChanceName4;
+    @FXML private Label critPowerName1;
+    @FXML private Label critPowerName2;
+    @FXML private Label critPowerName3;
+    @FXML private Label critPowerName4;
+
 
     @FXML private Label clickDesc1;
     @FXML private Label clickDesc2;
@@ -111,6 +128,15 @@ public class UpgradesController {
     @FXML private Label templeDesc2;
     @FXML private Label templeDesc3;
     @FXML private Label templeDesc4;
+    @FXML private Label critChanceDesc1;
+    @FXML private Label critChanceDesc2;
+    @FXML private Label critChanceDesc3;
+    @FXML private Label critChanceDesc4;
+    @FXML private Label critPowerDesc1;
+    @FXML private Label critPowerDesc2;
+    @FXML private Label critPowerDesc3;
+    @FXML private Label critPowerDesc4;
+
 
     @FXML private Label clickPrice1;
     @FXML private Label clickPrice2;
@@ -144,6 +170,14 @@ public class UpgradesController {
     @FXML private Label templePrice2;
     @FXML private Label templePrice3;
     @FXML private Label templePrice4;
+    @FXML private Label critChancePrice1;
+    @FXML private Label critChancePrice2;
+    @FXML private Label critChancePrice3;
+    @FXML private Label critChancePrice4;
+    @FXML private Label critPowerPrice1;
+    @FXML private Label critPowerPrice2;
+    @FXML private Label critPowerPrice3;
+    @FXML private Label critPowerPrice4;
 
     @FXML private Label clickMultiplier1;
     @FXML private Label clickMultiplier2;
@@ -177,6 +211,14 @@ public class UpgradesController {
     @FXML private Label templeMultiplier2;
     @FXML private Label templeMultiplier3;
     @FXML private Label templeMultiplier4;
+    @FXML private Label critChanceMultiplier1;
+    @FXML private Label critChanceMultiplier2;
+    @FXML private Label critChanceMultiplier3;
+    @FXML private Label critChanceMultiplier4;
+    @FXML private Label critPowerMultiplier1;
+    @FXML private Label critPowerMultiplier2;
+    @FXML private Label critPowerMultiplier3;
+    @FXML private Label critPowerMultiplier4;
 
     @FXML private TilePane clickPane1;
     @FXML private TilePane clickPane2;
@@ -210,6 +252,15 @@ public class UpgradesController {
     @FXML private TilePane templePane2;
     @FXML private TilePane templePane3;
     @FXML private TilePane templePane4;
+    @FXML private TilePane critChancePane1;
+    @FXML private TilePane critChancePane2;
+    @FXML private TilePane critChancePane3;
+    @FXML private TilePane critChancePane4;
+    @FXML private TilePane critPowerPane1;
+    @FXML private TilePane critPowerPane2;
+    @FXML private TilePane critPowerPane3;
+    @FXML private TilePane critPowerPane4;
+
 
     // Map to associate buttons with upgrade IDs
     public Map<Button, String> upgradeButtonMap = new HashMap<>();
@@ -246,7 +297,20 @@ public class UpgradesController {
             priceLabel.setText(String.valueOf(u.GetPrice()));
             nameLabel.setText(u.getName());
             descLabel.setText(u.getDescription());
-            multiplierLabel.setText(String.valueOf((int)u.GetMultiplier()) + "x Production");
+            switch (u.getTargetID()) {
+                case "click":
+                    multiplierLabel.setText(String.valueOf((int)u.GetMultiplier()) + "x Clicks");
+                    break;
+                case "critChance":
+                    multiplierLabel.setText("+" + String.valueOf((int)u.GetMultiplier()) + "% Critical Chance");
+                    break;
+                case "critPower":
+                    multiplierLabel.setText(String.valueOf((int)u.GetMultiplier()) + "x Critical Power");
+                    break;
+                default:
+                    multiplierLabel.setText(String.valueOf((int)u.GetMultiplier()) + "x Production");
+                    break;
+            }
 
             // Set action
             button.setOnAction(e -> {
@@ -278,18 +342,24 @@ public class UpgradesController {
     private void addButtons() {
         upgradeButtonMap.put(clickButton1, "click1");
         upgradeButtonMap.put(cursorButton1, "cursor1");
+        upgradeButtonMap.put(critChanceButton1, "critChance1");
         upgradeButtonMap.put(clickButton2, "click2");
         upgradeButtonMap.put(cursorButton2, "cursor2");
+        upgradeButtonMap.put(critChanceButton2, "critChance2");
 
         upgradeButtonMap.put(grandmaButton1, "grandma1");
         upgradeButtonMap.put(cursorButton3, "cursor3");
         upgradeButtonMap.put(clickButton3, "click3");
         upgradeButtonMap.put(grandmaButton2, "grandma2");
+        upgradeButtonMap.put(critPowerButton1, "critPower1");
+        upgradeButtonMap.put(critChanceButton3, "critChance3");
 
         upgradeButtonMap.put(farmButton1, "farm1");
         upgradeButtonMap.put(cursorButton4, "cursor4");
+        upgradeButtonMap.put(critChanceButton4, "critChance4");
         upgradeButtonMap.put(farmButton2, "farm2");
         upgradeButtonMap.put(grandmaButton3, "grandma3");
+        upgradeButtonMap.put(critPowerButton2, "critPower2");
 
         upgradeButtonMap.put(mineButton1, "mine1");
         upgradeButtonMap.put(farmButton3, "farm3");
@@ -304,6 +374,7 @@ public class UpgradesController {
         upgradeButtonMap.put(bankButton1, "bank1");
         upgradeButtonMap.put(farmButton4, "farm4");
         upgradeButtonMap.put(wizardButton3, "wizard3");
+        upgradeButtonMap.put(critPowerButton3, "critPower3");
         upgradeButtonMap.put(bankButton2, "bank2");
 
         upgradeButtonMap.put(templeButton1, "temple1");
@@ -312,6 +383,7 @@ public class UpgradesController {
         upgradeButtonMap.put(templeButton2, "temple2");
 
         upgradeButtonMap.put(wizardButton4, "wizard4");
+        upgradeButtonMap.put(critPowerButton4, "critPower4");
         upgradeButtonMap.put(bankButton4, "bank4");
         upgradeButtonMap.put(templeButton3, "temple3");
         upgradeButtonMap.put(templeButton4, "temple4");
@@ -320,18 +392,25 @@ public class UpgradesController {
     private void addNames() {
         upgradeNameMap.put("click1", clickName1);
         upgradeNameMap.put("cursor1", cursorName1);
+        upgradeNameMap.put("critChance1", critChanceName1);
         upgradeNameMap.put("click2", clickName2);
         upgradeNameMap.put("cursor2", cursorName2);
+        upgradeNameMap.put("critChance2", critChanceName2);
 
         upgradeNameMap.put("grandma1", grandmaName1);
         upgradeNameMap.put("cursor3", cursorName3);
         upgradeNameMap.put("click3", clickName3);
         upgradeNameMap.put("grandma2", grandmaName2);
+        upgradeNameMap.put("critPower1", critPowerName1);
+        upgradeNameMap.put("critChance3", critChanceName3);
 
         upgradeNameMap.put("farm1", farmName1);
         upgradeNameMap.put("cursor4", cursorName4);
+        upgradeNameMap.put("critChance4", critChanceName4);
         upgradeNameMap.put("farm2", farmName2);
         upgradeNameMap.put("grandma3", grandmaName3);
+        upgradeNameMap.put("critPower2", critPowerName2);
+
 
         upgradeNameMap.put("mine1", mineName1);
         upgradeNameMap.put("farm3", farmName3);
@@ -346,6 +425,7 @@ public class UpgradesController {
         upgradeNameMap.put("bank1", bankName1);
         upgradeNameMap.put("farm4", farmName4);
         upgradeNameMap.put("wizard3", wizardName3);
+        upgradeNameMap.put("critPower3", critPowerName3);
         upgradeNameMap.put("bank2", bankName2);
 
         upgradeNameMap.put("temple1", templeName1);
@@ -354,6 +434,7 @@ public class UpgradesController {
         upgradeNameMap.put("temple2", templeName2);
 
         upgradeNameMap.put("wizard4", wizardName4);
+        upgradeNameMap.put("critPower4", critPowerName4);
         upgradeNameMap.put("bank4", bankName4);
         upgradeNameMap.put("temple3", templeName3);
         upgradeNameMap.put("temple4", templeName4);
@@ -362,18 +443,24 @@ public class UpgradesController {
     private void addDescriptions() {
         upgradeDescMap.put("click1", clickDesc1);
         upgradeDescMap.put("cursor1", cursorDesc1);
+        upgradeDescMap.put("critChance1", critChanceDesc1);
         upgradeDescMap.put("click2", clickDesc2);
         upgradeDescMap.put("cursor2", cursorDesc2);
+        upgradeDescMap.put("critChance2", critChanceDesc2);
 
         upgradeDescMap.put("grandma1", grandmaDesc1);
         upgradeDescMap.put("cursor3", cursorDesc3);
         upgradeDescMap.put("click3", clickDesc3);
         upgradeDescMap.put("grandma2", grandmaDesc2);
+        upgradeDescMap.put("critPower1", critPowerDesc1);
+        upgradeDescMap.put("critChance3", critChanceDesc3);
 
         upgradeDescMap.put("farm1", farmDesc1);
         upgradeDescMap.put("cursor4", cursorDesc4);
+        upgradeDescMap.put("critChance4", critChanceDesc4);
         upgradeDescMap.put("farm2", farmDesc2);
         upgradeDescMap.put("grandma3", grandmaDesc3);
+        upgradeDescMap.put("critPower2", critPowerDesc2);
 
         upgradeDescMap.put("mine1", mineDesc1);
         upgradeDescMap.put("farm3", farmDesc3);
@@ -388,6 +475,7 @@ public class UpgradesController {
         upgradeDescMap.put("bank1", bankDesc1);
         upgradeDescMap.put("farm4", farmDesc4);
         upgradeDescMap.put("wizard3", wizardDesc3);
+        upgradeDescMap.put("critPower3", critPowerDesc3);
         upgradeDescMap.put("bank2", bankDesc2);
 
         upgradeDescMap.put("temple1", templeDesc1);
@@ -396,6 +484,7 @@ public class UpgradesController {
         upgradeDescMap.put("temple2", templeDesc2);
 
         upgradeDescMap.put("wizard4", wizardDesc4);
+        upgradeDescMap.put("critPower4", critPowerDesc4);
         upgradeDescMap.put("bank4", bankDesc4);
         upgradeDescMap.put("temple3", templeDesc3);
         upgradeDescMap.put("temple4", templeDesc4);
@@ -404,18 +493,24 @@ public class UpgradesController {
     private void addPrices() {
         upgradePriceMap.put("click1", clickPrice1);
         upgradePriceMap.put("cursor1", cursorPrice1);
+        upgradePriceMap.put("critChance1", critChancePrice1);
         upgradePriceMap.put("click2", clickPrice2);
         upgradePriceMap.put("cursor2", cursorPrice2);
+        upgradePriceMap.put("critChance2", critChancePrice2);
 
         upgradePriceMap.put("grandma1", grandmaPrice1);
         upgradePriceMap.put("cursor3", cursorPrice3);
         upgradePriceMap.put("click3", clickPrice3);
         upgradePriceMap.put("grandma2", grandmaPrice2);
+        upgradePriceMap.put("critPower1", critPowerPrice1);
+        upgradePriceMap.put("critChance3", critChancePrice3);
 
         upgradePriceMap.put("farm1", farmPrice1);
         upgradePriceMap.put("cursor4", cursorPrice4);
+        upgradePriceMap.put("critChance4", critChancePrice4);
         upgradePriceMap.put("farm2", farmPrice2);
         upgradePriceMap.put("grandma3", grandmaPrice3);
+        upgradePriceMap.put("critPower2", critPowerPrice2);
 
         upgradePriceMap.put("mine1", minePrice1);
         upgradePriceMap.put("farm3", farmPrice3);
@@ -430,6 +525,7 @@ public class UpgradesController {
         upgradePriceMap.put("bank1", bankPrice1);
         upgradePriceMap.put("farm4", farmPrice4);
         upgradePriceMap.put("wizard3", wizardPrice3);
+        upgradePriceMap.put("critPower3", critPowerPrice3);
         upgradePriceMap.put("bank2", bankPrice2);
 
         upgradePriceMap.put("temple1", templePrice1);
@@ -438,6 +534,7 @@ public class UpgradesController {
         upgradePriceMap.put("temple2", templePrice2);
 
         upgradePriceMap.put("wizard4", wizardPrice4);
+        upgradePriceMap.put("critPower4", critPowerPrice4);
         upgradePriceMap.put("bank4", bankPrice4);
         upgradePriceMap.put("temple3", templePrice3);
         upgradePriceMap.put("temple4", templePrice4);
@@ -446,18 +543,24 @@ public class UpgradesController {
     private void addMultiplier() {
         upgradeMultiplierMap.put("click1", clickMultiplier1);
         upgradeMultiplierMap.put("cursor1", cursorMultiplier1);
+        upgradeMultiplierMap.put("critChance1", critChanceMultiplier1);
         upgradeMultiplierMap.put("click2", clickMultiplier2);
         upgradeMultiplierMap.put("cursor2", cursorMultiplier2);
+        upgradeMultiplierMap.put("critChance2", critChanceMultiplier2);
 
         upgradeMultiplierMap.put("grandma1", grandmaMultiplier1);
         upgradeMultiplierMap.put("cursor3", cursorMultiplier3);
         upgradeMultiplierMap.put("click3", clickMultiplier3);
         upgradeMultiplierMap.put("grandma2", grandmaMultiplier2);
+        upgradeMultiplierMap.put("critPower1", critPowerMultiplier1);
+        upgradeMultiplierMap.put("critChance3", critChanceMultiplier3);
 
         upgradeMultiplierMap.put("farm1", farmMultiplier1);
         upgradeMultiplierMap.put("cursor4", cursorMultiplier4);
+        upgradeMultiplierMap.put("critChance4", critChanceMultiplier4);
         upgradeMultiplierMap.put("farm2", farmMultiplier2);
         upgradeMultiplierMap.put("grandma3", grandmaMultiplier3);
+        upgradeMultiplierMap.put("critPower2", critPowerMultiplier2);
 
         upgradeMultiplierMap.put("mine1", mineMultiplier1);
         upgradeMultiplierMap.put("farm3", farmMultiplier3);
@@ -472,6 +575,7 @@ public class UpgradesController {
         upgradeMultiplierMap.put("bank1", bankMultiplier1);
         upgradeMultiplierMap.put("farm4", farmMultiplier4);
         upgradeMultiplierMap.put("wizard3", wizardMultiplier3);
+        upgradeMultiplierMap.put("critPower3", critPowerMultiplier3);
         upgradeMultiplierMap.put("bank2", bankMultiplier2);
 
         upgradeMultiplierMap.put("temple1", templeMultiplier1);
@@ -480,6 +584,7 @@ public class UpgradesController {
         upgradeMultiplierMap.put("temple2", templeMultiplier2);
 
         upgradeMultiplierMap.put("wizard4", wizardMultiplier4);
+        upgradeMultiplierMap.put("critPower4", critPowerMultiplier4);
         upgradeMultiplierMap.put("bank4", bankMultiplier4);
         upgradeMultiplierMap.put("temple3", templeMultiplier3);
         upgradeMultiplierMap.put("temple4", templeMultiplier4);
@@ -488,18 +593,24 @@ public class UpgradesController {
     private void addTiles() {
         upgradePaneMap.put("click1", clickPane1);
         upgradePaneMap.put("cursor1", cursorPane1);
+        upgradePaneMap.put("critChance1", critChancePane1);
         upgradePaneMap.put("click2", clickPane2);
         upgradePaneMap.put("cursor2", cursorPane2);
+        upgradePaneMap.put("critChance2", critChancePane2);
 
         upgradePaneMap.put("grandma1", grandmaPane1);
         upgradePaneMap.put("cursor3", cursorPane3);
         upgradePaneMap.put("click3", clickPane3);
         upgradePaneMap.put("grandma2", grandmaPane2);
+        upgradePaneMap.put("critPower1", critPowerPane1);
+        upgradePaneMap.put("critChance3", critChancePane3);
 
         upgradePaneMap.put("farm1", farmPane1);
         upgradePaneMap.put("cursor4", cursorPane4);
+        upgradePaneMap.put("critChance4", critChancePane4);
         upgradePaneMap.put("farm2", farmPane2);
         upgradePaneMap.put("grandma3", grandmaPane3);
+        upgradePaneMap.put("critPower2", critPowerPane2);
 
         upgradePaneMap.put("mine1", minePane1);
         upgradePaneMap.put("farm3", farmPane3);
@@ -514,6 +625,7 @@ public class UpgradesController {
         upgradePaneMap.put("bank1", bankPane1);
         upgradePaneMap.put("farm4", farmPane4);
         upgradePaneMap.put("wizard3", wizardPane3);
+        upgradePaneMap.put("critPower3", critPowerPane3);
         upgradePaneMap.put("bank2", bankPane2);
 
         upgradePaneMap.put("temple1", templePane1);
@@ -522,6 +634,7 @@ public class UpgradesController {
         upgradePaneMap.put("temple2", templePane2);
 
         upgradePaneMap.put("wizard4", wizardPane4);
+        upgradePaneMap.put("critPower4", critPowerPane4);
         upgradePaneMap.put("bank4", bankPane4);
         upgradePaneMap.put("temple3", templePane3);
         upgradePaneMap.put("temple4", templePane4);

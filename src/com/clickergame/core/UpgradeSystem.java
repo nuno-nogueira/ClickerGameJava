@@ -49,6 +49,16 @@ public class UpgradeSystem {
         upgradesList.put("temple2", new Upgrade("Ancient Relics", "Relics have recently been found... ancient power!", "temple", 1500000, 2.0));
         upgradesList.put("temple3", new Upgrade("Divine Offerings", "Divine production!", "temple", 8000000, 2.0));
         upgradesList.put("temple4", new Upgrade("Cookie Deity", "The God of Sugar is now between us!", "temple", 40000000, 3.0));
+    
+        upgradesList.put("critPower1", new Upgrade("Reinforces Impact", "When the hits hits harder...", "critPower", 5000, 2.5));
+        upgradesList.put("critPower2", new Upgrade("Overcharged click", "Clicks overflow with raw power!", "critPower", 50000, 3.0));
+        upgradesList.put("critPower3", new Upgrade("Reality Breaker", "Critical clicks bend reality itself!", "critPower", 500000, 4.0));
+        upgradesList.put("critPower4", new Upgrade("Singularity Click", "A single click. Infinite COOKIES!", "critPower", 5000000, 5));
+
+        upgradesList.put("critChance1", new Upgrade("Lucky Finger", "Sometimes, luck smiles on your clicks. :)", "critChance", 100, 1.0));
+        upgradesList.put("critChance2", new Upgrade("Golden Touch", "Your clicks shine with fortune.", "critChance", 750, 1.0));
+        upgradesList.put("critChance3", new Upgrade("Fortnue Clicks", "Fornute clearly favors you.", "critChance", 6000, 2.0));
+        upgradesList.put("critChance4", new Upgrade("Fate Manipulation", "Luck is no longer random!", "critChance", 45000, 3.0));
     }
 
     // Fetch Upgrade Info!

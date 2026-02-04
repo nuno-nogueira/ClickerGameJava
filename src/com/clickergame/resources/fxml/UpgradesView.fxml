@@ -10,9 +10,9 @@
 
 <ScrollPane hbarPolicy="ALWAYS" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clickergame.ui.UpgradesController">
    <content>
-      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2580.0" prefWidth="600.0">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="3220.0" prefWidth="600.0">
          <children>
-            <TilePane fx:id="clickPane1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2480.0">
+            <TilePane fx:id="clickPane1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="3120.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -37,7 +37,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="cursorPane1" alignment="CENTER" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2400.0">
+            <TilePane fx:id="cursorPane1" alignment="CENTER" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="3040.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -62,7 +62,32 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="clickPane2" alignment="CENTER" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2320.0">
+            <TilePane fx:id="critChancePane1" alignment="CENTER" layoutY="110.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2960.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="critChanceName1" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="critChanceDesc1" prefHeight="18.0" prefWidth="257.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="critChanceMultiplier1" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0" TilePane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="critChancePrice1" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="critChanceButton1" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="clickPane2" alignment="CENTER" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2880.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -87,7 +112,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="cursorPane2" alignment="CENTER" layoutY="300.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2240.0">
+            <TilePane fx:id="cursorPane2" alignment="CENTER" layoutY="300.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2800.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -112,7 +137,32 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="grandmaPane1" alignment="CENTER" layoutY="311.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2160.0">
+            <TilePane fx:id="critChancePane2" alignment="CENTER" layoutY="120.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2720.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="critChanceName2" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="critChanceDesc2" prefHeight="18.0" prefWidth="257.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="critChanceMultiplier2" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0" TilePane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="critChancePrice2" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="critChanceButton2" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="grandmaPane1" alignment="CENTER" layoutY="311.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2640.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -137,7 +187,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="cursorPane3" alignment="CENTER" layoutY="321.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2080.0">
+            <TilePane fx:id="cursorPane3" alignment="CENTER" layoutY="321.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2560.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -162,7 +212,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="clickPane3" alignment="CENTER" layoutY="331.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2000.0">
+            <TilePane fx:id="clickPane3" alignment="CENTER" layoutY="331.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2480.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -187,7 +237,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="grandmaPane2" alignment="CENTER" layoutY="321.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1920.0">
+            <TilePane fx:id="grandmaPane2" alignment="CENTER" layoutY="321.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2400.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -212,7 +262,57 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="farmPane1" alignment="CENTER" layoutY="331.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1840.0">
+            <TilePane fx:id="critPowerPane1" alignment="CENTER" layoutY="130.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2320.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="critPowerName1" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="critPowerDesc1" prefHeight="18.0" prefWidth="257.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="critPowerMultiplier1" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0" TilePane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="critPowerPrice1" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="critPowerButton1" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="critChancePane3" alignment="CENTER" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2240.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="critChanceName3" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="critChanceDesc3" prefHeight="18.0" prefWidth="257.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="critChanceMultiplier3" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0" TilePane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="critChancePrice3" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="critChanceButton3" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="farmPane1" alignment="CENTER" layoutY="331.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2160.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -237,7 +337,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="cursorPane4" alignment="CENTER" layoutY="331.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1760.0">
+            <TilePane fx:id="cursorPane4" alignment="CENTER" layoutY="331.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2080.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -262,7 +362,32 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="farmPane2" alignment="CENTER" layoutY="341.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1680.0">
+            <TilePane fx:id="critChancePane4" alignment="CENTER" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="2000.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="critChanceName4" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="critChanceDesc4" prefHeight="18.0" prefWidth="257.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="critChanceMultiplier4" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0" TilePane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="critChancePrice4" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="critChanceButton4" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="farmPane2" alignment="CENTER" layoutY="341.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1920.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -287,7 +412,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="grandmaPane3" alignment="CENTER" layoutY="331.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1600.0">
+            <TilePane fx:id="grandmaPane3" alignment="CENTER" layoutY="331.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1840.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -312,7 +437,32 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="minePane1" alignment="CENTER" layoutY="341.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1520.0">
+            <TilePane fx:id="critPowerPane2" alignment="CENTER" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1760.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="critPowerName2" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="critPowerDesc2" prefHeight="18.0" prefWidth="257.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="critPowerMultiplier2" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0" TilePane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="critPowerPrice2" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="critPowerButton2" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="minePane1" alignment="CENTER" layoutY="341.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1680.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -337,7 +487,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="farmPane3" alignment="CENTER" layoutY="351.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1440.0">
+            <TilePane fx:id="farmPane3" alignment="CENTER" layoutY="351.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1600.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -362,7 +512,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="minePane2" alignment="CENTER" layoutY="351.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1360.0">
+            <TilePane fx:id="minePane2" alignment="CENTER" layoutY="351.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1520.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -387,7 +537,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="clickPane4" alignment="CENTER" layoutY="331.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1280.0">
+            <TilePane fx:id="clickPane4" alignment="CENTER" layoutY="331.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1440.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -412,7 +562,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="wizardPane1" alignment="CENTER" layoutY="341.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1200.0">
+            <TilePane fx:id="wizardPane1" alignment="CENTER" layoutY="341.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1360.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -437,7 +587,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="grandmaPane4" alignment="CENTER" layoutY="341.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1120.0">
+            <TilePane fx:id="grandmaPane4" alignment="CENTER" layoutY="341.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1280.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -462,7 +612,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="wizardPane2" alignment="CENTER" layoutY="351.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1040.0">
+            <TilePane fx:id="wizardPane2" alignment="CENTER" layoutY="351.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1200.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -487,7 +637,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="minePane3" alignment="CENTER" layoutY="361.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="960.0">
+            <TilePane fx:id="minePane3" alignment="CENTER" layoutY="361.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1120.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -512,7 +662,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="bankPane1" alignment="CENTER" layoutY="371.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="880.0">
+            <TilePane fx:id="bankPane1" alignment="CENTER" layoutY="371.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="1040.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -537,7 +687,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="farmPane4" alignment="CENTER" layoutY="361.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="800.0">
+            <TilePane fx:id="farmPane4" alignment="CENTER" layoutY="361.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="960.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -562,7 +712,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="wizardPane3" alignment="CENTER" layoutY="351.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="720.0">
+            <TilePane fx:id="wizardPane3" alignment="CENTER" layoutY="351.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="880.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -587,7 +737,32 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="bankPane2" alignment="CENTER" layoutY="381.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="640.0">
+            <TilePane fx:id="critPowerPane3" alignment="CENTER" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="800.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="critPowerName3" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="critPowerDesc3" prefHeight="18.0" prefWidth="257.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="critPowerMultiplier3" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0" TilePane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="critPowerPrice3" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="critPowerButton3" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="bankPane2" alignment="CENTER" layoutY="381.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="720.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -612,7 +787,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="templePane1" alignment="CENTER" layoutY="391.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="560.0">
+            <TilePane fx:id="templePane1" alignment="CENTER" layoutY="391.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="640.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -637,7 +812,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="minePane4" alignment="CENTER" layoutY="371.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="480.0">
+            <TilePane fx:id="minePane4" alignment="CENTER" layoutY="371.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="560.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -662,7 +837,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="bankPane3" alignment="CENTER" layoutY="381.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="400.0">
+            <TilePane fx:id="bankPane3" alignment="CENTER" layoutY="381.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="480.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -687,7 +862,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="templePane2" alignment="CENTER" layoutY="401.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="320.0">
+            <TilePane fx:id="templePane2" alignment="CENTER" layoutY="401.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="400.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -712,7 +887,7 @@
                   </TilePane>
                </children>
             </TilePane>
-            <TilePane fx:id="wizardPane4" alignment="CENTER" layoutY="361.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="240.0">
+            <TilePane fx:id="wizardPane4" alignment="CENTER" layoutY="361.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="320.0">
                <children>
                   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
                      <children>
@@ -733,6 +908,31 @@
                      <children>
                         <Label fx:id="wizardPrice4" text="Price" TilePane.alignment="TOP_RIGHT" />
                         <Button fx:id="wizardButton4" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
+                     </children>
+                  </TilePane>
+               </children>
+            </TilePane>
+            <TilePane fx:id="critPowerPane4" alignment="CENTER" layoutY="160.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" AnchorPane.bottomAnchor="240.0">
+               <children>
+                  <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="critPowerName4" prefHeight="18.0" prefWidth="100.0" text="Reinforced Finger" TilePane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="critPowerDesc4" prefHeight="18.0" prefWidth="257.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="critPowerMultiplier4" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0" TilePane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="critPowerPrice4" text="Price" TilePane.alignment="TOP_RIGHT" />
+                        <Button fx:id="critPowerButton4" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT" />
                      </children>
                   </TilePane>
                </children>

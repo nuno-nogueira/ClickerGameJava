@@ -5,19 +5,27 @@ import com.clickergame.systems.Upgrade;
 
 public  class GameState{
     private int clicks = 1;
-    private double coins = 0d;
+    private double coins = 10000000d;
     private BuildingSystem buildingSystem = new BuildingSystem();
     private UpgradeSystem upgradeSystem = new UpgradeSystem();
+    private CriticalSystem criticalSystem = new CriticalSystem();
 
     // Getters
     public int GetClicks(){ return clicks; };
     public double GetCoins(){ return coins; };
     public BuildingSystem GetbuildingSystem() { return buildingSystem; };
     public UpgradeSystem GetUpgradeSystem() { return upgradeSystem; };
+    public CriticalSystem GetCriticalSystem() { return criticalSystem; };
 
     // Methods
     public double cookieClick() {
-        coins += clicks;
+        boolean isCritical = criticalSystem.tryCritical(Math.random() * 100);
+
+        if (isCritical) {
+            coins = criticalSystem.applyCritical(coins, clicks);
+        } else {
+            coins += clicks;
+        } 
         return coins;
     }
 
@@ -54,13 +62,35 @@ public  class GameState{
             Upgrade u = upgradeSystem.getUpgrade(id);
             coins -= u.GetPrice();
 
-            if (u.getTargetID() == "click") {
-                // Automatically multiply the click production
-                clicks = (int)(clicks * u.GetMultiplier());
-            } else {
-                upgradeSystem.buy(id, u.getTargetID());
-                buildingSystem.applyMultiplier(u.getTargetID(), u.GetMultiplier());
+            System.out.println("test1");
+            switch (u.getTargetID()) {
+                case "click":
+                    clicks = (int)(clicks * u.GetMultiplier());
+                    break;
+                case "critChance":
+                    criticalSystem.criticalChance += u.GetMultiplier();
+                    System.out.println("Critical Chance: " + criticalSystem.criticalChance);
+                    break;
+                case "critPower":
+                    criticalSystem.criticalPower = u.GetMultiplier();
+                    System.out.println("Critical Power: " + criticalSystem.criticalPower);
+                    break;
+                default:
+                    upgradeSystem.buy(id, u.getTargetID());
+                    buildingSystem.applyMultiplier(u.getTargetID(), u.GetMultiplier());
+                    break;
             }
+
+            // if (u.getTargetID() == "click") {
+            //     // Automatically multiply the click production
+            //     clicks = (int)(clicks * u.GetMultiplier());
+            // } else if (u.getTargetID() == "critChance") {
+
+            // } 
+            // else {
+            //     upgradeSystem.buy(id, u.getTargetID());
+            //     buildingSystem.applyMultiplier(u.getTargetID(), u.GetMultiplier());
+            // }
         }
     }
 
