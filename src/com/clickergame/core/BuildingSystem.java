@@ -28,8 +28,8 @@ public class BuildingSystem {
         return coins >= upgrades.get(id).GetPrice();
     }
 
-    public int totalPassiveIncome() {
-        int total = 0;
+    public double totalPassiveIncome() {
+        double total = 0d;
         for (Building u : upgrades.values()) {
             total += u.passiveIncome();
         }

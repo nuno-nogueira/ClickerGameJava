@@ -145,6 +145,39 @@ public class UpgradesController {
     @FXML private Label templePrice3;
     @FXML private Label templePrice4;
 
+    @FXML private Label clickMultiplier1;
+    @FXML private Label clickMultiplier2;
+    @FXML private Label clickMultiplier3;
+    @FXML private Label clickMultiplier4;
+    @FXML private Label cursorMultiplier1;
+    @FXML private Label cursorMultiplier2;
+    @FXML private Label cursorMultiplier3;
+    @FXML private Label cursorMultiplier4;
+    @FXML private Label grandmaMultiplier1;
+    @FXML private Label grandmaMultiplier2;
+    @FXML private Label grandmaMultiplier3;
+    @FXML private Label grandmaMultiplier4;
+    @FXML private Label farmMultiplier1;
+    @FXML private Label farmMultiplier2;
+    @FXML private Label farmMultiplier3;
+    @FXML private Label farmMultiplier4;
+    @FXML private Label mineMultiplier1;
+    @FXML private Label mineMultiplier2;
+    @FXML private Label mineMultiplier3;
+    @FXML private Label mineMultiplier4;
+    @FXML private Label wizardMultiplier1;
+    @FXML private Label wizardMultiplier2;
+    @FXML private Label wizardMultiplier3;
+    @FXML private Label wizardMultiplier4;
+    @FXML private Label bankMultiplier1;
+    @FXML private Label bankMultiplier2;
+    @FXML private Label bankMultiplier3;
+    @FXML private Label bankMultiplier4;
+    @FXML private Label templeMultiplier1;
+    @FXML private Label templeMultiplier2;
+    @FXML private Label templeMultiplier3;
+    @FXML private Label templeMultiplier4;
+
     @FXML private TilePane clickPane1;
     @FXML private TilePane clickPane2;
     @FXML private TilePane clickPane3;
@@ -178,12 +211,12 @@ public class UpgradesController {
     @FXML private TilePane templePane3;
     @FXML private TilePane templePane4;
 
-
     // Map to associate buttons with upgrade IDs
     public Map<Button, String> upgradeButtonMap = new HashMap<>();
     private Map<String, Label> upgradeNameMap = new HashMap<>();
     private Map<String, Label> upgradePriceMap = new HashMap<>();
     private Map<String, Label> upgradeDescMap = new HashMap<>();
+    private Map<String, Label> upgradeMultiplierMap = new HashMap<>();
     public Map<String, TilePane> upgradePaneMap = new HashMap<>();
 
     private GameState gamestate;
@@ -195,6 +228,7 @@ public class UpgradesController {
         addNames();
         addDescriptions();
         addPrices();
+        addMultiplier();
         addTiles();
 
         // Loop over each upgrade and set texts + actions
@@ -206,16 +240,19 @@ public class UpgradesController {
             Label priceLabel = upgradePriceMap.get(upgradeId);
             Label nameLabel = upgradeNameMap.get(upgradeId);
             Label descLabel = upgradeDescMap.get(upgradeId);
+            Label multiplierLabel = upgradeMultiplierMap.get(upgradeId);
 
             // Set UI texts
             priceLabel.setText(String.valueOf(u.GetPrice()));
             nameLabel.setText(u.getName());
             descLabel.setText(u.getDescription());
+            multiplierLabel.setText(String.valueOf((int)u.GetMultiplier()) + "x Production");
 
             // Set action
             button.setOnAction(e -> {
                 buyUpgrade(upgradeId, button);
             });
+            updateButtons(upgradeId, button);
         }
     }
 
@@ -223,6 +260,18 @@ public class UpgradesController {
         gamestate.applyUpgrade(id);
         upgradePaneMap.get(id).setVisible(false);
         System.out.println(id + " upgrade officially bought!"); 
+    }
+
+    private void updateButtons(String id, Button button) {
+        Upgrade upgrade = gamestate.getUpgrade(id);
+
+        if (gamestate.GetCoins() >= upgrade.GetPrice()) {
+            button.setDisable(false);
+            button.setStyle("");
+        } else {
+            button.setDisable(true);
+            button.setStyle("-fx-text-fill: red;");
+        }
     }
 
     // ---- Helper methods to register UI elements in maps ----
@@ -394,6 +443,48 @@ public class UpgradesController {
         upgradePriceMap.put("temple4", templePrice4);
     }
 
+    private void addMultiplier() {
+        upgradeMultiplierMap.put("click1", clickMultiplier1);
+        upgradeMultiplierMap.put("cursor1", cursorMultiplier1);
+        upgradeMultiplierMap.put("click2", clickMultiplier2);
+        upgradeMultiplierMap.put("cursor2", cursorMultiplier2);
+
+        upgradeMultiplierMap.put("grandma1", grandmaMultiplier1);
+        upgradeMultiplierMap.put("cursor3", cursorMultiplier3);
+        upgradeMultiplierMap.put("click3", clickMultiplier3);
+        upgradeMultiplierMap.put("grandma2", grandmaMultiplier2);
+
+        upgradeMultiplierMap.put("farm1", farmMultiplier1);
+        upgradeMultiplierMap.put("cursor4", cursorMultiplier4);
+        upgradeMultiplierMap.put("farm2", farmMultiplier2);
+        upgradeMultiplierMap.put("grandma3", grandmaMultiplier3);
+
+        upgradeMultiplierMap.put("mine1", mineMultiplier1);
+        upgradeMultiplierMap.put("farm3", farmMultiplier3);
+        upgradeMultiplierMap.put("mine2", mineMultiplier2);
+        upgradeMultiplierMap.put("click4", clickMultiplier4);
+
+        upgradeMultiplierMap.put("wizard1", wizardMultiplier1);
+        upgradeMultiplierMap.put("grandma4", grandmaMultiplier4);
+        upgradeMultiplierMap.put("wizard2", wizardMultiplier2);
+        upgradeMultiplierMap.put("mine3", mineMultiplier3);
+
+        upgradeMultiplierMap.put("bank1", bankMultiplier1);
+        upgradeMultiplierMap.put("farm4", farmMultiplier4);
+        upgradeMultiplierMap.put("wizard3", wizardMultiplier3);
+        upgradeMultiplierMap.put("bank2", bankMultiplier2);
+
+        upgradeMultiplierMap.put("temple1", templeMultiplier1);
+        upgradeMultiplierMap.put("mine4", mineMultiplier4);
+        upgradeMultiplierMap.put("bank3", bankMultiplier3);
+        upgradeMultiplierMap.put("temple2", templeMultiplier2);
+
+        upgradeMultiplierMap.put("wizard4", wizardMultiplier4);
+        upgradeMultiplierMap.put("bank4", bankMultiplier4);
+        upgradeMultiplierMap.put("temple3", templeMultiplier3);
+        upgradeMultiplierMap.put("temple4", templeMultiplier4);
+    }
+
     private void addTiles() {
         upgradePaneMap.put("click1", clickPane1);
         upgradePaneMap.put("cursor1", cursorPane1);
@@ -436,4 +527,9 @@ public class UpgradesController {
         upgradePaneMap.put("temple4", templePane4);
     }
 
+    public void refreshAllButtons() {
+        for (Map.Entry<Button, String> entry : upgradeButtonMap.entrySet()) { 
+            updateButtons(entry.getValue(), entry.getKey());
+        }
+    }
 }

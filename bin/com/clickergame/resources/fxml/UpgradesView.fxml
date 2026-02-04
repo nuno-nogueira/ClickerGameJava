@@ -6,6 +6,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.text.Font?>
 
 <ScrollPane hbarPolicy="ALWAYS" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clickergame.ui.UpgradesController">
    <content>
@@ -21,6 +22,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="clickDesc1" prefHeight="18.0" prefWidth="261.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="clickMultiplier1" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -41,6 +47,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="cursorDesc1" prefHeight="18.0" prefWidth="257.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="cursorMultiplier1" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0" TilePane.alignment="CENTER">
@@ -61,6 +72,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="clickDesc2" prefHeight="18.0" prefWidth="250.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="clickMultiplier2" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -81,6 +97,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="cursorDesc2" prefHeight="18.0" prefWidth="266.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="cursorMultiplier2" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -101,6 +122,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="grandmaDesc1" prefHeight="18.0" prefWidth="290.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="grandmaMultiplier1" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -121,6 +147,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="cursorDesc3" prefHeight="18.0" prefWidth="258.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="cursorMultiplier3" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -141,6 +172,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="clickDesc3" prefHeight="18.0" prefWidth="314.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="clickMultiplier3" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -161,6 +197,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="grandmaDesc2" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="grandmaMultiplier2" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -181,6 +222,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="farmDesc1" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="farmMultiplier1" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -201,6 +247,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="cursorDesc4" prefHeight="18.0" prefWidth="258.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="cursorMultiplier4" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -221,6 +272,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="farmDesc2" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="farmMultiplier2" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -241,6 +297,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="grandmaDesc3" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="grandmaMultiplier3" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -261,6 +322,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="mineDesc1" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="mineMultiplier1" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -281,6 +347,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="farmDesc3" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="farmMultiplier3" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -301,6 +372,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="mineDesc2" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="mineMultiplier2" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -321,6 +397,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="clickDesc4" prefHeight="18.0" prefWidth="258.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="clickMultiplier4" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -341,6 +422,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="wizardDesc1" prefHeight="18.0" prefWidth="258.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="wizardMultiplier1" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -361,6 +447,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="grandmaDesc4" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="grandmaMultiplier4" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -381,6 +472,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="wizardDesc2" prefHeight="18.0" prefWidth="258.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="wizardMultiplier2" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -401,6 +497,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="mineDesc3" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="mineMultiplier3" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -421,6 +522,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="bankDesc1" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="bankMultiplier1" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -441,6 +547,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="farmDesc4" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="farmMultiplier4" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -461,6 +572,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="wizardDesc3" prefHeight="18.0" prefWidth="258.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="wizardMultiplier3" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -481,6 +597,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="bankDesc2" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="bankMultiplier2" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -501,6 +622,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="templeDesc1" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="templeMultiplier1" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -521,6 +647,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="mineDesc4" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="mineMultiplier4" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -541,6 +672,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="bankDesc3" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="bankMultiplier3" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -561,6 +697,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="templeDesc2" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="templeMultiplier2" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -581,6 +722,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="wizardDesc4" prefHeight="18.0" prefWidth="258.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="wizardMultiplier4" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -601,6 +747,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="bankDesc4" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="bankMultiplier4" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -621,6 +772,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="templeDesc3" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="templeMultiplier3" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">
@@ -641,6 +797,11 @@
                            </padding>
                         </Label>
                         <Label fx:id="templeDesc4" prefHeight="18.0" prefWidth="337.0" text="Each click is now double!" TilePane.alignment="CENTER" />
+                        <Label fx:id="templeMultiplier4" text="Multiplier" TilePane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </TilePane>
                   <TilePane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="60.0" prefWidth="150.0">

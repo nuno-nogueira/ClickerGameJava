@@ -5,7 +5,7 @@ import com.clickergame.systems.Upgrade;
 
 public  class GameState{
     private int clicks = 1;
-    private double coins = 1000000000000000d;
+    private double coins = 0d;
     private BuildingSystem buildingSystem = new BuildingSystem();
     private UpgradeSystem upgradeSystem = new UpgradeSystem();
 
@@ -64,8 +64,8 @@ public  class GameState{
         }
     }
 
-    public int updatePassiveIncome() {
-        int income = buildingSystem.totalPassiveIncome();
+    public double updatePassiveIncome() {
+        double income = buildingSystem.totalPassiveIncome();
         coins += income;
         return income;
     }

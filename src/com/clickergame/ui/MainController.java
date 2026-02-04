@@ -157,8 +157,9 @@ public class MainController {
 
     @FXML private void onCookie() {
         gamestate.cookieClick();
-        coinsLabel.setText(gamestate.GetCoins() + " cookies");
+        coinsLabel.setText((int)gamestate.GetCoins() + " cookies");
         buildingsController.refreshAllButtons();
+        upgradesController.refreshAllButtons();
     }
 
     private void startCursorLoop() {
@@ -168,8 +169,8 @@ public class MainController {
 
     gameLoop = new Timeline(
         new KeyFrame(Duration.seconds(1), e -> {
-            int income = gamestate.updatePassiveIncome();
-            coinsLabel.setText(gamestate.GetCoins() + " cookies");
+            double income = gamestate.updatePassiveIncome();
+            coinsLabel.setText((int)gamestate.GetCoins() + " cookies");
             coinsPerSecond.setText(income + " /s");
 
             buildingsController.refreshAllButtons();
