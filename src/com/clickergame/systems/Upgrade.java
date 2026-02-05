@@ -24,8 +24,4 @@ public class Upgrade {
     public String getDescription() { return description; };
     public Boolean isPurchased() { return purchased; };
     public void markAsPurchased() { purchased = true; };
-
-    public void implementMultiplier() {
-
-    }
 }

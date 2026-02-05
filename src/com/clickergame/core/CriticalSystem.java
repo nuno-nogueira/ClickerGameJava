@@ -1,8 +1,8 @@
 package com.clickergame.core;
 
 public class CriticalSystem {
-    double criticalChance = 1.0d;
-    double criticalPower = 2.0d;
+    public double criticalChance = 1.0d;
+    public double criticalPower = 2.0d;
 
     public double applyCritical(double coins, int clicks) {
         coins += (clicks * criticalPower);

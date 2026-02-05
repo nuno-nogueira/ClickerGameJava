@@ -1,14 +1,21 @@
 package com.clickergame.core;
 
 import com.clickergame.systems.Building;
+import com.clickergame.systems.GoldenCookie;
 import com.clickergame.systems.Upgrade;
 
 public  class GameState{
     private int clicks = 1;
-    private double coins = 10000000d;
+    public double coins = 10000000d;
     private BuildingSystem buildingSystem = new BuildingSystem();
     private UpgradeSystem upgradeSystem = new UpgradeSystem();
-    private CriticalSystem criticalSystem = new CriticalSystem();
+    private CriticalSystem criticalSystem;
+    private GoldenCookieSystem goldenCookieSystem;
+
+    public GameState() {
+        this.criticalSystem = new CriticalSystem();
+        this.goldenCookieSystem = new GoldenCookieSystem(this, criticalSystem);
+    }
 
     // Getters
     public int GetClicks(){ return clicks; };
@@ -62,35 +69,21 @@ public  class GameState{
             Upgrade u = upgradeSystem.getUpgrade(id);
             coins -= u.GetPrice();
 
-            System.out.println("test1");
             switch (u.getTargetID()) {
                 case "click":
                     clicks = (int)(clicks * u.GetMultiplier());
                     break;
                 case "critChance":
                     criticalSystem.criticalChance += u.GetMultiplier();
-                    System.out.println("Critical Chance: " + criticalSystem.criticalChance);
                     break;
                 case "critPower":
                     criticalSystem.criticalPower = u.GetMultiplier();
-                    System.out.println("Critical Power: " + criticalSystem.criticalPower);
                     break;
                 default:
                     upgradeSystem.buy(id, u.getTargetID());
                     buildingSystem.applyMultiplier(u.getTargetID(), u.GetMultiplier());
                     break;
             }
-
-            // if (u.getTargetID() == "click") {
-            //     // Automatically multiply the click production
-            //     clicks = (int)(clicks * u.GetMultiplier());
-            // } else if (u.getTargetID() == "critChance") {
-
-            // } 
-            // else {
-            //     upgradeSystem.buy(id, u.getTargetID());
-            //     buildingSystem.applyMultiplier(u.getTargetID(), u.GetMultiplier());
-            // }
         }
     }
 
@@ -100,4 +93,16 @@ public  class GameState{
         return income;
     }
 
+    public void goldenCookieChance() {
+        if (goldenCookieSystem.activeCookie == null) {
+            boolean isThereCookie = Math.random() * 100 < 80 ? true : false;
+
+            if (isThereCookie) {
+                System.out.println("OMG A GOLDEN COOKIE!!");
+                GoldenCookie goldenCookie = goldenCookieSystem.goldenCookieList.values().stream().skip((int)(Math.random() * goldenCookieSystem.goldenCookieList.size())).findFirst().orElse(null);
+                goldenCookieSystem.activateCookie(goldenCookie);
+                goldenCookieSystem.updateGoldenCookies();
+            }
+        }
+    }
 }

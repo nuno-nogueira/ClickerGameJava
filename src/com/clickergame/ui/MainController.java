@@ -172,6 +172,7 @@ public class MainController {
             double income = gamestate.updatePassiveIncome();
             coinsLabel.setText((int)gamestate.GetCoins() + " cookies");
             coinsPerSecond.setText(income + " /s");
+            gamestate.goldenCookieChance();
 
             buildingsController.refreshAllButtons();
         })
