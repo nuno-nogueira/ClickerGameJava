@@ -34,6 +34,7 @@
                <ScrollPane fx:id="upgradePanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" StackPane.alignment="CENTER" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
 
                </ScrollPane>
+               <VBox fx:id="statsPanel" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" StackPane.alignment="CENTER" />
             </children>
          </StackPane>
       </center>
@@ -43,6 +44,7 @@
                <Button fx:id="cookieTabButton" mnemonicParsing="false" onAction="#onCookieTabClicked" text="Cookie Panel" />
                <Button fx:id="buildingTabButton1" mnemonicParsing="false" onAction="#onBuildingTabClicked" text="Buildings Panel" />
                <Button fx:id="upgradeTabButton" mnemonicParsing="false" onAction="#onUpgradeTabClicked" text="Upgrades Panel" />
+               <Button fx:id="statsTabButton" mnemonicParsing="false" onAction="#onStatsTabClicked" text="Stats Panel" />
             </children>
          </HBox>
       </bottom>

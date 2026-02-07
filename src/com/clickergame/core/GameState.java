@@ -12,6 +12,9 @@ public  class GameState{
     public double coins = 10000000d;
     public int totalBuildings = 0;
     public double globalMultiplier = 1.0d;
+    public int totalClicks;
+    public int totalCookies;
+
     private BuildingSystem buildingSystem;
     private UpgradeSystem upgradeSystem = new UpgradeSystem();
     private CriticalSystem criticalSystem;
@@ -42,23 +45,28 @@ public  class GameState{
     public UpgradeSystem GetUpgradeSystem() { return upgradeSystem; };
     public CriticalSystem GetCriticalSystem() { return criticalSystem; };
     public int GetTotalBuildings() { return totalBuildings; };
+    public double GetGlobalMultiplier() { return globalMultiplier; };
+    public int GetTotalClicks() { return totalClicks; };
+    public int GetTotalCookies() { return totalCookies; };
+    public double GetCriticalChance() { return criticalSystem.GetCriticalChance(); };
+    public double GetCriticalPower() { return criticalSystem.GetCriticalPower(); };
+    public double GetGoldenChance() { return goldenCookieSystem.GetCookieChance(); };
+    public int getGoldenClicks() { return goldenCookieSystem.GetGoldenClicks(); };
 
     // Methods
     public double cookieClick() {
         boolean isCritical = criticalSystem.tryCritical(Math.random() * 100);
+        this.totalClicks++;
 
         if (isCritical) {
-            coins = (globalMultiplier * criticalSystem.applyCritical(coins, clicks));
-
+            coins = (globalMultiplier * criticalSystem.applyCritical(coins, clicks, totalCookies));
         } else {
             coins += (globalMultiplier * clicks);
+            totalCookies += (globalMultiplier * clicks);
         } 
         return coins;
     }
 
-    public void addCoins(int amount) {
-        coins += amount;
-    }
 
     public Building getBuilding(String id) {
         return buildingSystem.getUpgrade(id);
@@ -115,6 +123,7 @@ public  class GameState{
     public double updatePassiveIncome() {
         double income = (buildingSystem.totalPassiveIncome() * globalMultiplier);
         coins += income;
+        totalCookies += income;
         return income;
     }
 
@@ -131,7 +140,6 @@ public  class GameState{
     }
 
     public void verifyGlobalSynergies() {
-        System.out.println(totalBuildings);
         for (Synergy synergy : globalSynergies.values()) {
             HashMap<String, Integer> requirement = synergy.GetRequirement();
 

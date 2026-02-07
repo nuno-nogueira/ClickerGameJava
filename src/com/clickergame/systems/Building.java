@@ -35,15 +35,11 @@ public class Building {
 
     public void incrementQuantity() {
         quantity++;
-
-        System.out.println(name + "upgrade bought for " + this.price + "! :o");
-        //price += price + Math.pow(1.01, quantity)
         this.price *= this.priceIncrement;
     }
 
     public void incrementProduction(int newValue) {
         production *= newValue;
-        System.out.println(name + "production bought for " + newValue + "! :o");
     }
 
     public int passiveIncome() {

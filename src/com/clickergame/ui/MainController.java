@@ -23,10 +23,12 @@ public class MainController {
     @FXML private VBox cookiePanel;
     @FXML private VBox buildingPanel;
     @FXML private ScrollPane upgradePanel;
+    @FXML private VBox statsPanel;
 
     @FXML  private Button cookieTabButton;
     @FXML private Button buildingTabButton;
     @FXML private Button upgradeTabButton;
+    @FXML private Button statsTabButton;
 
     @FXML private Button clickButton;
     @FXML private Button cursorButton;
@@ -72,6 +74,7 @@ public class MainController {
     private GameState gamestate;
     @FXML private UpgradesController upgradesController;
     @FXML private BuildingsController buildingsController;
+    @FXML private StatsController statsController;
 
     @FXML
     public void initialize() {
@@ -88,18 +91,34 @@ public class MainController {
                 getClass().getResource("/com/clickergame/resources/fxml/BuildingsView.fxml")
             );
 
+            FXMLLoader statsLoader = new FXMLLoader(
+                getClass().getResource("/com/clickergame/resources/fxml/StatsView.fxml")
+            );
+
             Node upgradesRoot = upgradesLoader.load();
             Node buildingsRoot = buildingsLoader.load();
+            Node statsRoot = statsLoader.load();
 
+            // Get the respective controller
             upgradesController = upgradesLoader.getController();
             buildingsController = buildingsLoader.getController();
+            statsController = statsLoader.getController();
 
+            // Initializing each controller
             upgradesController.initialize(gamestate);
+
+            statsController.setMainController(this);
+            statsController.setup(gamestate);
 
             buildingsController.setMainController(this);
             buildingsController.setup(gamestate);
+            
+            // Getting the content of each controller
+            statsPanel.getChildren().clear();
+            statsPanel.getChildren().add(statsRoot);
 
             upgradePanel.setContent(upgradesRoot);
+
             buildingPanel.getChildren().clear();
             buildingPanel.getChildren().add(buildingsRoot);
         } catch (IOException e) {
@@ -143,6 +162,12 @@ public class MainController {
         showScroll(upgradePanel);
     }
 
+    @FXML private void showStatsPanel() {
+        showPanel(statsPanel);
+    }
+
+    /*********** */
+
     @FXML void onCookieTabClicked() {
         showCookiePanel();
     }
@@ -153,6 +178,10 @@ public class MainController {
 
     @FXML private void onUpgradeTabClicked() {
         showUpgradePanel();
+    } 
+
+    @FXML private void onStatsTabClicked() {
+        showStatsPanel();
     } 
 
     @FXML private void onCookie() {
@@ -174,6 +203,9 @@ public class MainController {
             coinsPerSecond.setText(income + " /s");
             gamestate.goldenCookieChance();
             buildingsController.refreshAllButtons();
+
+            // Refresh global stats to display the info
+            statsController.refreshStats();
         })
     );
 

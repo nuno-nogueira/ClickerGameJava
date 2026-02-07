@@ -14,6 +14,7 @@ public class GoldenCookieSystem {
     private ScheduledExecutorService timer;
     public GoldenCookie activeCookie = null; 
     public double cookieChance = 1.0d;
+    public int goldenCookieClicks = 0;
 
     public GoldenCookieSystem(GameState gameState, CriticalSystem criticalSystem) {
         this.gameState = gameState;
@@ -27,7 +28,7 @@ public class GoldenCookieSystem {
 
     // Getter
     public double GetCookieChance() { return cookieChance; };
-    
+    public int GetGoldenClicks() { return goldenCookieClicks; };
 
     public void updateGoldenCookies() {
         if (activeCookie == null) {
@@ -46,6 +47,7 @@ public class GoldenCookieSystem {
     public void activateCookie(GoldenCookie cookie) {
         activeCookie = cookie;
         cookie.resetLifespan(cookie.GetLifespan());
+        goldenCookieClicks++;
 
         switch (cookie.GetTypeId()) {
             case "critChance":
