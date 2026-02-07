@@ -173,7 +173,6 @@ public class MainController {
             coinsLabel.setText((int)gamestate.GetCoins() + " cookies");
             coinsPerSecond.setText(income + " /s");
             gamestate.goldenCookieChance();
-
             buildingsController.refreshAllButtons();
         })
     );

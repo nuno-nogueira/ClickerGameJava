@@ -5,6 +5,7 @@ public class GoldenCookie {
     private int lifespan;
     private String text;
     public String typeId;
+    public int cookieChance = 10;
 
     public GoldenCookie(int value, int lifespan, String text, String typeId) {
         this.value = value;
@@ -18,6 +19,7 @@ public class GoldenCookie {
     public int GetValue() { return value; };
     public int GetLifespan() { return lifespan; };
     public String GetTypeId() { return typeId; };
+    public int GetCookieChance() { return cookieChance; };
 
     public void decreaseLifespan() {
         lifespan--;

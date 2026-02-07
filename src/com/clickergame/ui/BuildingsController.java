@@ -5,10 +5,13 @@ import java.util.Map;
 
 import com.clickergame.core.GameState;
 import com.clickergame.systems.Building;
+import com.clickergame.systems.Synergy;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressIndicator;
+import javafx.scene.control.ProgressBar;
 
 public class BuildingsController {
     @FXML private Button clickButton;
@@ -35,6 +38,10 @@ public class BuildingsController {
     @FXML private Label wizardQuantity;
     @FXML private Label bankQuantity;
     @FXML private Label templeQuantity;
+
+    @FXML private ProgressBar globalBar;
+    @FXML private ProgressIndicator globalIndicator;
+    @FXML private Label globalSynergyLabel;
 
     // Map to associate buttons with building IDs
     private Map<Button, String> buildingButtonMap = new HashMap<>();
@@ -65,7 +72,6 @@ public class BuildingsController {
         updatePrice.setText("" + gamestate.getBuilding(id).GetPrice());
 
         mainController.coinsLabel.setText(gamestate.GetCoins() + " cookies");
-        System.out.println(id + " building officially bought!");
     }
 
     private void implementBuilding(String id, Button button) {
@@ -82,8 +88,10 @@ public class BuildingsController {
         Label updatePrice = buildingQuantityMap.get(id);
         updatePrice.setText("" + gamestate.getBuilding(id).GetPrice());
 
+        gamestate.verifyGlobalSynergies();
+        updateGlobalSynergyUI();
+        updateGlobalSynergyLabel();
         mainController.coinsLabel.setText(gamestate.GetCoins() + " cookies");
-        System.out.println(id + " upgrade officially bought!");
     }
 
     private void updateButtons(Button button, String id) {
@@ -171,5 +179,23 @@ public class BuildingsController {
             Building building = gamestate.getBuilding(buildingId);
             label.setText("" + building.GetPrice());
         }
+    }
+
+    private void updateGlobalSynergyUI() {
+        double progress = gamestate.getGlobalSynergyProgress();
+        globalBar.setProgress(progress);
+        globalIndicator.setProgress(progress);
+    }
+
+    private void updateGlobalSynergyLabel() {
+        Synergy next = gamestate.getNextGlobalSynergy();
+
+        if (next == null) {
+            globalSynergyLabel.setText("All synergies unlocked");
+            return;
+        }
+
+        int required = next.GetRequirement().get("global");
+        globalSynergyLabel.setText(gamestate.GetTotalBuildings() + " / " + required + " buildings");
     }
 }

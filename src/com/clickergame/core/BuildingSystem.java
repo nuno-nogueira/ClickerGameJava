@@ -33,6 +33,7 @@ public class BuildingSystem {
         for (Building u : upgrades.values()) {
             total += u.passiveIncome();
         }
+        
 
         return total;
     }

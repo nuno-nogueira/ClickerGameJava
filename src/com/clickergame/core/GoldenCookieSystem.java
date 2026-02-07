@@ -8,11 +8,12 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class GoldenCookieSystem {
-    HashMap<String, GoldenCookie> goldenCookieList = new HashMap<String, GoldenCookie>();
+    public HashMap<String, GoldenCookie> goldenCookieList = new HashMap<String, GoldenCookie>();
     private CriticalSystem criticalSystem;
     private GameState gameState;
     private ScheduledExecutorService timer;
     public GoldenCookie activeCookie = null; 
+    public double cookieChance = 1.0d;
 
     public GoldenCookieSystem(GameState gameState, CriticalSystem criticalSystem) {
         this.gameState = gameState;
@@ -23,6 +24,9 @@ public class GoldenCookieSystem {
         goldenCookieList.put("golden3", new GoldenCookie(100, 5, "100% Critical Chance for 5s!", "critChance"));
         goldenCookieList.put("golden4", new GoldenCookie(10, 0, "FREE COOKIES!", "cookies"));
     }
+
+    // Getter
+    public double GetCookieChance() { return cookieChance; };
     
 
     public void updateGoldenCookies() {
@@ -32,7 +36,6 @@ public class GoldenCookieSystem {
         }
 
         activeCookie.decreaseLifespan();
-        System.out.println(activeCookie.GetLifespan());
         if (activeCookie.GetLifespan() <= 0) {
             removeEffect(activeCookie);
             activeCookie = null;
@@ -78,9 +81,7 @@ public class GoldenCookieSystem {
     private void startTimer() {
         if (timer == null || timer.isShutdown()) {
             if ( activeCookie.GetTypeId() == "critChance" ) {
-                System.out.println(criticalSystem.criticalChance);
             } else if (activeCookie.GetTypeId() == "critPower" ) {
-                System.out.println(criticalSystem.criticalPower);
             }
             timer = Executors.newSingleThreadScheduledExecutor();
             timer.scheduleAtFixedRate(this::updateGoldenCookies, 1, 1, TimeUnit.SECONDS);

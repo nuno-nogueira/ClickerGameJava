@@ -3,12 +3,32 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clickergame.ui.BuildingsController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clickergame.ui.BuildingsController">
    <children>
+      <ProgressIndicator fx:id="globalIndicator" progress="0.0">
+         <VBox.margin>
+            <Insets bottom="15.0" top="5.0" />
+         </VBox.margin>
+      </ProgressIndicator>
+      <Label fx:id="globalSynergyLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Progress">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+      </Label>
+      <ProgressBar fx:id="globalBar" prefWidth="200.0" progress="0.0">
+         <VBox.margin>
+            <Insets bottom="15.0" />
+         </VBox.margin>
+      </ProgressBar>
       <TilePane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefColumns="2" prefHeight="55.0" prefRows="2" prefWidth="250.0">
          <children>
             <TilePane alignment="CENTER_LEFT" prefColumns="2" prefHeight="40.0" prefWidth="67.0" tileAlignment="BOTTOM_LEFT">

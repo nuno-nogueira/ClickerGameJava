@@ -323,7 +323,6 @@ public class UpgradesController {
     private void buyUpgrade(String id, Button button) {
         gamestate.applyUpgrade(id);
         upgradePaneMap.get(id).setVisible(false);
-        System.out.println(id + " upgrade officially bought!"); 
     }
 
     private void updateButtons(String id, Button button) {
