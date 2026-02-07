@@ -12,7 +12,7 @@ public  class GameState{
     public double coins = 10000000d;
     public int totalBuildings = 0;
     public double globalMultiplier = 1.0d;
-    private BuildingSystem buildingSystem = new BuildingSystem();
+    private BuildingSystem buildingSystem;
     private UpgradeSystem upgradeSystem = new UpgradeSystem();
     private CriticalSystem criticalSystem;
     private GoldenCookieSystem goldenCookieSystem;
@@ -21,6 +21,7 @@ public  class GameState{
     public GameState() {
         this.criticalSystem = new CriticalSystem();
         this.goldenCookieSystem = new GoldenCookieSystem(this, criticalSystem);
+        this.buildingSystem = new BuildingSystem(this, criticalSystem, goldenCookieSystem);
 
         globalSynergies.put(1, new Synergy(this, criticalSystem, goldenCookieSystem, "global", 5, new HashMap<>() {{put("global", 10);}}, false));
         globalSynergies.put(2, new Synergy(this, criticalSystem, goldenCookieSystem,"global", 10, new HashMap<>() {{put("global", 25);}}, false));
@@ -76,6 +77,10 @@ public  class GameState{
             coins -= buildingSystem.getUpgrade(id).GetPrice();
             buildingSystem.buy(id);
             this.totalBuildings++; 
+
+            if (buildingSystem.getUpgrade(id).GetQuantity() % 10 == 0) {
+                buildingSystem.applySynergy(id);
+            }
         }
     }
 

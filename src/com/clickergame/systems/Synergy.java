@@ -57,3 +57,4 @@ public class Synergy {
         this.isClaimed = true;
     }
 }
+

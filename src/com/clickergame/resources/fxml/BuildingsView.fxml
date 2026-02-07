@@ -29,21 +29,29 @@
             <Insets bottom="15.0" />
          </VBox.margin>
       </ProgressBar>
-      <TilePane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefColumns="2" prefHeight="55.0" prefRows="2" prefWidth="250.0">
+      <TilePane alignment="CENTER" hgap="50.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefColumns="2" prefHeight="55.0" prefRows="2" prefWidth="200.0">
          <children>
-            <TilePane alignment="CENTER_LEFT" prefColumns="2" prefHeight="40.0" prefWidth="67.0" tileAlignment="BOTTOM_LEFT">
+            <TilePane alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefColumns="2" prefHeight="55.0" prefWidth="250.0" tileAlignment="BOTTOM_LEFT">
                <children>
-                  <Label fx:id="cursorLabel" prefHeight="18.0" prefWidth="50.0" text="Cursor">
+                  <Label fx:id="cursorLabel" prefHeight="18.0" prefWidth="188.0" text="Cursor">
                      <TilePane.margin>
                         <Insets left="5.0" />
                      </TilePane.margin>
+                  </Label>
+                  <Label fx:id="cursorSynergy" prefHeight="18.0" prefWidth="245.0" text="Synergy">
+                     <TilePane.margin>
+                        <Insets left="5.0" top="5.0" />
+                     </TilePane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
                   </Label>
                </children>
                <TilePane.margin>
                   <Insets right="60.0" />
                </TilePane.margin>
             </TilePane>
-            <TilePane alignment="CENTER" orientation="VERTICAL" prefHeight="100.0" prefWidth="127.0">
+            <TilePane alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="55.0" prefWidth="91.0">
                <children>
                   <Label fx:id="cursorQuantity" text="Price" />
                   <Button fx:id="cursorButton" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="CENTER_LEFT">
@@ -52,16 +60,30 @@
                      </TilePane.margin>
                   </Button>
                </children>
+               <TilePane.margin>
+                  <Insets />
+               </TilePane.margin>
             </TilePane>
          </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
       </TilePane>
-      <TilePane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefColumns="2" prefHeight="55.0" prefRows="2" prefWidth="250.0">
+      <TilePane alignment="CENTER" hgap="50.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefColumns="2" prefHeight="55.0" prefRows="2" prefWidth="200.0">
          <children>
-            <TilePane alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="67.0" tileAlignment="BOTTOM_LEFT" TilePane.alignment="CENTER">
+            <TilePane alignment="CENTER_LEFT" minWidth="-Infinity" orientation="VERTICAL" prefHeight="55.0" prefWidth="250.0" tileAlignment="BOTTOM_LEFT" TilePane.alignment="CENTER">
                <children>
-                  <Label fx:id="grandmaLabel" text="Grandma">
+                  <Label fx:id="grandmaLabel" prefHeight="18.0" prefWidth="186.0" text="Grandma">
                      <TilePane.margin>
                         <Insets left="5.0" />
+                     </TilePane.margin>
+                  </Label>
+                  <Label fx:id="grandmaSynergy" prefHeight="18.0" prefWidth="242.0" text="Synergy">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <TilePane.margin>
+                        <Insets left="5.0" top="5.0" />
                      </TilePane.margin>
                   </Label>
                </children>
@@ -69,7 +91,7 @@
                   <Insets right="60.0" />
                </TilePane.margin>
             </TilePane>
-            <TilePane alignment="CENTER" orientation="VERTICAL" prefHeight="100.0" prefWidth="127.0">
+            <TilePane alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="100.0" prefWidth="90.0">
                <children>
                   <Label fx:id="grandmaQuantity" text="Price" />
                   <Button fx:id="grandmaButton" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT">
@@ -80,14 +102,25 @@
                </children>
             </TilePane>
          </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
       </TilePane>
-      <TilePane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="250.0">
+      <TilePane alignment="CENTER" hgap="50.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="55.0" prefWidth="200.0">
          <children>
-            <TilePane alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="67.0" tileAlignment="CENTER_LEFT">
+            <TilePane alignment="CENTER_LEFT" minWidth="-Infinity" orientation="VERTICAL" prefHeight="55.0" prefWidth="250.0" tileAlignment="CENTER_LEFT" TilePane.alignment="CENTER">
                <children>
-                  <Label fx:id="farmLabel" text="Farm" TilePane.alignment="CENTER_LEFT">
+                  <Label fx:id="farmLabel" prefHeight="18.0" prefWidth="190.0" text="Farm" TilePane.alignment="CENTER_LEFT">
                      <TilePane.margin>
                         <Insets left="5.0" />
+                     </TilePane.margin>
+                  </Label>
+                  <Label fx:id="farmSynergy" prefHeight="18.0" prefWidth="249.0" text="Synergy">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <TilePane.margin>
+                        <Insets left="5.0" top="5.0" />
                      </TilePane.margin>
                   </Label>
                </children>
@@ -95,7 +128,7 @@
                   <Insets right="60.0" />
                </TilePane.margin>
             </TilePane>
-            <TilePane alignment="CENTER" orientation="VERTICAL" prefHeight="100.0" prefWidth="127.0">
+            <TilePane alignment="CENTER" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="100.0" prefWidth="90.0">
                <children>
                   <Label fx:id="farmQuantity" text="Price" />
                   <Button fx:id="farmButton" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT">
@@ -107,13 +140,21 @@
             </TilePane>
          </children>
       </TilePane>
-      <TilePane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="250.0">
+      <TilePane alignment="CENTER" hgap="50.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="55.0" prefWidth="200.0">
          <children>
-            <TilePane alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="67.0" tileAlignment="BOTTOM_LEFT">
+            <TilePane alignment="CENTER_LEFT" minWidth="-Infinity" orientation="VERTICAL" prefHeight="55.0" prefWidth="250.0" tileAlignment="BOTTOM_LEFT">
                <children>
-                  <Label fx:id="mineLabel" text="Mine" TilePane.alignment="CENTER_LEFT">
+                  <Label fx:id="mineLabel" prefHeight="18.0" prefWidth="194.0" text="Mine" TilePane.alignment="CENTER_LEFT">
                      <TilePane.margin>
                         <Insets left="5.0" />
+                     </TilePane.margin>
+                  </Label>
+                  <Label fx:id="mineSynergy" prefHeight="18.0" prefWidth="246.0" text="Synergy">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <TilePane.margin>
+                        <Insets left="5.0" top="5.0" />
                      </TilePane.margin>
                   </Label>
                </children>
@@ -121,7 +162,7 @@
                   <Insets right="60.0" />
                </TilePane.margin>
             </TilePane>
-            <TilePane alignment="CENTER" orientation="VERTICAL" prefHeight="100.0" prefWidth="127.0">
+            <TilePane alignment="CENTER" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="100.0" prefWidth="90.0">
                <children>
                   <Label fx:id="mineQuantity" text="Price" />
                   <Button fx:id="mineButton" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT">
@@ -133,13 +174,21 @@
             </TilePane>
          </children>
       </TilePane>
-      <TilePane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="250.0">
+      <TilePane alignment="CENTER" hgap="50.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="55.0" prefWidth="200.0">
          <children>
-            <TilePane alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="67.0" tileAlignment="BOTTOM_LEFT">
+            <TilePane alignment="CENTER_LEFT" minWidth="-Infinity" orientation="VERTICAL" prefHeight="55.0" prefWidth="250.0" tileAlignment="BOTTOM_LEFT">
                <children>
-                  <Label fx:id="wizardLabel" text="Wizard" TilePane.alignment="CENTER_LEFT">
+                  <Label fx:id="wizardLabel" prefHeight="18.0" prefWidth="190.0" text="Wizard" TilePane.alignment="CENTER_LEFT">
                      <TilePane.margin>
                         <Insets left="5.0" />
+                     </TilePane.margin>
+                  </Label>
+                  <Label fx:id="wizardSynergy" prefHeight="18.0" prefWidth="244.0" text="Synergy">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <TilePane.margin>
+                        <Insets left="5.0" top="5.0" />
                      </TilePane.margin>
                   </Label>
                </children>
@@ -147,7 +196,7 @@
                   <Insets right="60.0" />
                </TilePane.margin>
             </TilePane>
-            <TilePane alignment="CENTER" orientation="VERTICAL" prefHeight="100.0" prefWidth="127.0">
+            <TilePane alignment="CENTER" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="100.0" prefWidth="90.0">
                <children>
                   <Label fx:id="wizardQuantity" text="Price" />
                   <Button fx:id="wizardButton" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT">
@@ -159,13 +208,21 @@
             </TilePane>
          </children>
       </TilePane>
-      <TilePane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="250.0">
+      <TilePane alignment="CENTER" hgap="50.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="55.0" prefWidth="200.0">
          <children>
-            <TilePane alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="67.0" tileAlignment="BOTTOM_LEFT">
+            <TilePane alignment="CENTER_LEFT" minWidth="-Infinity" orientation="VERTICAL" prefHeight="55.0" prefWidth="250.0" tileAlignment="BOTTOM_LEFT">
                <children>
-                  <Label fx:id="bankLabel" text="Bank" TilePane.alignment="CENTER_LEFT">
+                  <Label fx:id="bankLabel" prefHeight="18.0" prefWidth="190.0" text="Bank" TilePane.alignment="CENTER_LEFT">
                      <TilePane.margin>
                         <Insets left="5.0" />
+                     </TilePane.margin>
+                  </Label>
+                  <Label fx:id="bankSynergy" prefHeight="18.0" prefWidth="246.0" text="Synergy">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <TilePane.margin>
+                        <Insets left="5.0" top="5.0" />
                      </TilePane.margin>
                   </Label>
                </children>
@@ -173,7 +230,7 @@
                   <Insets right="60.0" />
                </TilePane.margin>
             </TilePane>
-            <TilePane alignment="CENTER" orientation="VERTICAL" prefHeight="100.0" prefWidth="127.0">
+            <TilePane alignment="CENTER" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="100.0" prefWidth="90.0">
                <children>
                   <Label fx:id="bankQuantity" text="Price" />
                   <Button fx:id="bankButton" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT">
@@ -185,13 +242,21 @@
             </TilePane>
          </children>
       </TilePane>
-      <TilePane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="250.0">
+      <TilePane alignment="CENTER" hgap="50.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="55.0" prefWidth="200.0">
          <children>
-            <TilePane alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="67.0" tileAlignment="BOTTOM_LEFT">
+            <TilePane alignment="CENTER_LEFT" minWidth="-Infinity" orientation="VERTICAL" prefHeight="55.0" prefWidth="250.0" tileAlignment="BOTTOM_LEFT">
                <children>
-                  <Label fx:id="templeLabel" text="Temple" TilePane.alignment="CENTER_LEFT">
+                  <Label fx:id="templeLabel" prefHeight="18.0" prefWidth="186.0" text="Temple" TilePane.alignment="CENTER_LEFT">
                      <TilePane.margin>
                         <Insets left="5.0" />
+                     </TilePane.margin>
+                  </Label>
+                  <Label fx:id="templeSynergy" prefHeight="18.0" prefWidth="243.0" text="Synergy">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <TilePane.margin>
+                        <Insets left="5.0" top="5.0" />
                      </TilePane.margin>
                   </Label>
                </children>
@@ -199,7 +264,7 @@
                   <Insets right="60.0" />
                </TilePane.margin>
             </TilePane>
-            <TilePane alignment="CENTER" orientation="VERTICAL" prefHeight="100.0" prefWidth="127.0">
+            <TilePane alignment="CENTER" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="100.0" prefWidth="90.0">
                <children>
                   <Label fx:id="templeQuantity" text="Price" />
                   <Button fx:id="templeButton" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Buy 1" TilePane.alignment="TOP_RIGHT">
