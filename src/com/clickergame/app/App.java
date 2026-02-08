@@ -17,15 +17,14 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/fxml/MainView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/clickergame/resources/fxml/MainView.fxml"));
         Parent root = loader.load();
         MainController controller = loader.getController();
-        //StackPane root = new StackPane();
 
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
-
+        //test
         primaryStage.setOnCloseRequest(e -> {
             controller.stopGameLoop();
         });

@@ -1,0 +1,9 @@
+<project xmlns=""> 
+    <modelVersion>4.0.0</modelVersion> 
+    <groupId>com.clickergame</groupId> 
+    <artifactId>CookieClickerJava</artifactId> 
+    <version>1.0</version> <properties> 
+    <maven.compiler.source>25</maven.compiler.source> 
+    <maven.compiler.target>25</maven.compiler.target> 
+    </properties> 
+</project>
