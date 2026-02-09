@@ -1,8 +1,8 @@
 package com.clickergame.systems;
 
 public class Building {
-    private int price;
-    private int quantity;
+    public int price;
+    public int quantity;
     private double production;
     private String name;
     private double multiplier;

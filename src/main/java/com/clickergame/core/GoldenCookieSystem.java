@@ -13,8 +13,8 @@ public class GoldenCookieSystem {
     private GameState gameState;
     private ScheduledExecutorService timer;
     public GoldenCookie activeCookie = null; 
-    public double cookieChance = 1.0d;
-    public int goldenCookieClicks = 0;
+    public double cookieChance;
+    public int goldenCookieClicks;
 
     public GoldenCookieSystem(GameState gameState, CriticalSystem criticalSystem) {
         this.gameState = gameState;

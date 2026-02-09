@@ -13,7 +13,7 @@ public class Synergy {
     private GameState gamestate;
     private CriticalSystem criticalSystem;
     private GoldenCookieSystem goldenCookieSystem;
-    private boolean isClaimed;
+    public boolean isClaimed;
     
     public Synergy(GameState gamestate, CriticalSystem criticalSystem, GoldenCookieSystem goldenCookieSystem, String targetId, double value, HashMap<String, Integer> requirement, boolean isClaimed) {
         this.gamestate = gamestate;

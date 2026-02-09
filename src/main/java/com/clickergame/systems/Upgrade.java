@@ -6,7 +6,7 @@ public class Upgrade {
     private String targetID;
     private String name;
     private String description;
-    private Boolean purchased = false;
+    public Boolean purchased = false;
 
     public Upgrade(String name, String description, String targetID, int price, double multiplier) {
         this.price = price;

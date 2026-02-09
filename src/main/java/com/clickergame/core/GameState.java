@@ -1,17 +1,19 @@
 package com.clickergame.core;
 
+import java.sql.Savepoint;
 import java.util.HashMap;
 
+import com.clickergame.persistence.SaveData;
 import com.clickergame.systems.Building;
 import com.clickergame.systems.GoldenCookie;
 import com.clickergame.systems.Synergy;
 import com.clickergame.systems.Upgrade;
 
 public  class GameState{
-    private int clicks = 1;
-    public double coins = 10000000d;
-    public int totalBuildings = 0;
-    public double globalMultiplier = 1.0d;
+    private int clicks;
+    public double coins;
+    public int totalBuildings;
+    public double globalMultiplier;
     public int totalClicks;
     public int totalCookies;
 
@@ -169,5 +171,80 @@ public  class GameState{
 
         int required = next.GetRequirement().get("global");
         return Math.min(1.0, (double) totalBuildings / required);
+    }
+
+    public SaveData toSaveData() {
+        SaveData save = new SaveData();
+
+        /******** CORE ********/
+        save.clicks = this.GetClicks();
+        save.coins = (int)this.GetCoins();
+        save.totalBuildings = this.GetTotalBuildings();
+        save.totalClicks = this.GetTotalClicks();
+        save.totalCookies = this.GetTotalCookies();
+        save.globalMultiplier = this.GetGlobalMultiplier();
+
+        /******** BUILDINGS ********/
+        buildingSystem.getAllUpgrades().forEach((id, b) -> {
+            save.buildingQuantitites.put(id, b.GetQuantity());
+            save.buildingPrices.put(id, b.GetPrice());
+        });
+
+        /******** UPGRADES ********/
+        upgradeSystem.getAllUpgrades().forEach((id, u) -> {
+            save.purchasedUpgrades.put(id, u.isPurchased());
+        });
+
+        /******** CRITICAL SYSTEM ********/
+        save.crititcalChance = this.criticalSystem.GetCriticalChance();
+        save.crititcalPower = this.criticalSystem.GetCriticalPower();
+
+        /******** GOLDEN COOKIE SYSTEM ********/
+        save.goldenCookieChance = goldenCookieSystem.GetCookieChance();
+        save.goldenCookieClicks = goldenCookieSystem.GetGoldenClicks();
+
+        return save;
+    }
+
+    public void loadData(SaveData save) {
+        /******** CORE ********/
+        this.clicks = save.clicks;
+        this.coins = save.coins;
+        this.totalBuildings = save.totalBuildings;
+        this.totalClicks = save.totalClicks;
+        this.totalCookies = save.totalCookies;
+        this.globalMultiplier = save.globalMultiplier;
+
+        /******** BUILDINGS ********/
+        save.buildingQuantitites.forEach((id, quantity) -> {
+            Building b = buildingSystem.getUpgrade(id);
+            if (b != null) b.quantity = quantity;
+        });
+
+        save.buildingPrices.forEach((id, price) -> {
+            Building b = buildingSystem.getUpgrade(id);
+            if (b != null) b.price = price;
+        });
+
+        /******** UPGRADES ********/
+        save.purchasedUpgrades.forEach((id, purchased) -> {
+            Upgrade u = upgradeSystem.getUpgrade(id);
+            if (u != null ) u.purchased = purchased;
+        });
+
+        /******** SYNERGIES ********/
+        save.claimedSynergies.forEach((id, claimed) -> {
+            int key = Integer.parseInt(id);
+            Synergy s = globalSynergies.get(key);
+            if (s != null) s.isClaimed = claimed;
+        });
+
+        /******** CRITICAL SYSTEM ********/
+        criticalSystem.criticalChance = save.crititcalChance;
+        criticalSystem.criticalPower = save.crititcalPower;
+
+        /******** GOLDEN COOKIE SYSTEM ********/
+        goldenCookieSystem.cookieChance = save.goldenCookieChance;
+        goldenCookieSystem.goldenCookieClicks = save.goldenCookieClicks;
     }
 }

@@ -4,6 +4,7 @@ import java.io.IOException;
 import javafx.scene.Node;
 import com.clickergame.core.GameState;
 import com.clickergame.persistence.SaveManager;
+import com.clickergame.persistence.SaveData;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -75,19 +76,25 @@ public class MainController {
 
     private Timeline gameLoop;
     private GameState gamestate;
-    private SaveManager saveData;
-    private Object obj;
+    private SaveData saveData;
+    private SaveManager saveManager;
     @FXML private UpgradesController upgradesController;
     @FXML private BuildingsController buildingsController;
     @FXML private StatsController statsController;
 
     @FXML
     public void initialize() {
-        gamestate = new GameState();
-        saveData = new SaveManager();
-        saveData.save("test");
-        obj = saveData.load();
-        System.out.println(obj + "2");
+        saveManager = new SaveManager();
+        saveData = new SaveData();
+
+        SaveData loadedSave = (SaveData)saveManager.load();
+        if (loadedSave != null) {
+            gamestate = new GameState();
+            gamestate.loadData(loadedSave);
+        } else {
+            gamestate = new GameState();
+        }
+        
         showCookiePanel();
         //implementBuildings();
 
@@ -212,7 +219,8 @@ public class MainController {
             coinsPerSecond.setText(income + " /s");
             gamestate.goldenCookieChance();
             buildingsController.refreshAllButtons();
-            test.setText(obj + "");
+
+            saveManager.save(gamestate.toSaveData());
 
             // Refresh global stats to display the info
             statsController.refreshStats();
@@ -221,6 +229,10 @@ public class MainController {
 
     gameLoop.setCycleCount(Timeline.INDEFINITE); // updates UI
     gameLoop.play();
+    }
+
+    public GameState getGameState() {
+        return gamestate;
     }
 
     public void stopGameLoop() {

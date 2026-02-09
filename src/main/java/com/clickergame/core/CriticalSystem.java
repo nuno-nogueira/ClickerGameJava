@@ -1,8 +1,8 @@
 package com.clickergame.core;
 
 public class CriticalSystem {
-    public double criticalChance = 1.0d;
-    public double criticalPower = 2.0d;
+    public double criticalChance;
+    public double criticalPower;
 
     // Getters
     public double GetCriticalChance() { return criticalChance; };
