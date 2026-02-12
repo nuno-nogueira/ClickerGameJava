@@ -3,14 +3,17 @@ C:\Users\nunon\Desktop\freeCodeCamp\Java\Projects\CookieClickerJava\src\main\jav
 C:\Users\nunon\Desktop\freeCodeCamp\Java\Projects\CookieClickerJava\src\main\java\com\clickergame\core\CriticalSystem.java
 C:\Users\nunon\Desktop\freeCodeCamp\Java\Projects\CookieClickerJava\src\main\java\com\clickergame\core\GameState.java
 C:\Users\nunon\Desktop\freeCodeCamp\Java\Projects\CookieClickerJava\src\main\java\com\clickergame\core\GoldenCookieSystem.java
+C:\Users\nunon\Desktop\freeCodeCamp\Java\Projects\CookieClickerJava\src\main\java\com\clickergame\core\PrestigeSystem.java
 C:\Users\nunon\Desktop\freeCodeCamp\Java\Projects\CookieClickerJava\src\main\java\com\clickergame\core\UpgradeSystem.java
 C:\Users\nunon\Desktop\freeCodeCamp\Java\Projects\CookieClickerJava\src\main\java\com\clickergame\persistence\SaveData.java
 C:\Users\nunon\Desktop\freeCodeCamp\Java\Projects\CookieClickerJava\src\main\java\com\clickergame\persistence\SaveManager.java
 C:\Users\nunon\Desktop\freeCodeCamp\Java\Projects\CookieClickerJava\src\main\java\com\clickergame\systems\Building.java
 C:\Users\nunon\Desktop\freeCodeCamp\Java\Projects\CookieClickerJava\src\main\java\com\clickergame\systems\GoldenCookie.java
+C:\Users\nunon\Desktop\freeCodeCamp\Java\Projects\CookieClickerJava\src\main\java\com\clickergame\systems\Prestige.java
 C:\Users\nunon\Desktop\freeCodeCamp\Java\Projects\CookieClickerJava\src\main\java\com\clickergame\systems\Synergy.java
 C:\Users\nunon\Desktop\freeCodeCamp\Java\Projects\CookieClickerJava\src\main\java\com\clickergame\systems\Upgrade.java
 C:\Users\nunon\Desktop\freeCodeCamp\Java\Projects\CookieClickerJava\src\main\java\com\clickergame\ui\BuildingsController.java
 C:\Users\nunon\Desktop\freeCodeCamp\Java\Projects\CookieClickerJava\src\main\java\com\clickergame\ui\MainController.java
+C:\Users\nunon\Desktop\freeCodeCamp\Java\Projects\CookieClickerJava\src\main\java\com\clickergame\ui\PrestigeController.java
 C:\Users\nunon\Desktop\freeCodeCamp\Java\Projects\CookieClickerJava\src\main\java\com\clickergame\ui\StatsController.java
 C:\Users\nunon\Desktop\freeCodeCamp\Java\Projects\CookieClickerJava\src\main\java\com\clickergame\ui\UpgradesController.java

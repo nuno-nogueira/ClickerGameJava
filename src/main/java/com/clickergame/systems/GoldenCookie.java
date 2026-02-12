@@ -2,12 +2,12 @@ package com.clickergame.systems;
 
 public class GoldenCookie {
     private int value;
-    private int lifespan;
+    private double lifespan;
     private String text;
     public String typeId;
     public int cookieChance = 10;
 
-    public GoldenCookie(int value, int lifespan, String text, String typeId) {
+    public GoldenCookie(int value, double lifespan, String text, String typeId) {
         this.value = value;
         this.lifespan = lifespan;
         this.text = text;
@@ -17,7 +17,7 @@ public class GoldenCookie {
     // Getters
     public String GetText() { return text; };
     public int GetValue() { return value; };
-    public int GetLifespan() { return lifespan; };
+    public double GetLifespan() { return lifespan; };
     public String GetTypeId() { return typeId; };
     public int GetCookieChance() { return cookieChance; };
 
@@ -25,7 +25,7 @@ public class GoldenCookie {
         lifespan--;
     }
 
-    public void resetLifespan(int newLifespan) {
+    public void resetLifespan(double newLifespan) {
         lifespan = newLifespan;
     }
 }

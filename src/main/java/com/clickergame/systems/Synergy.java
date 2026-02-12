@@ -31,9 +31,6 @@ public class Synergy {
     public HashMap<String, Integer> GetRequirement() { return requirement; };
     public boolean GetIsClaimed() { return isClaimed; };
 
-    public void verifyBuildingSynergies() {
-    }
-
     public void applySynergy(String target, double value) {
         switch (target) {
             case "global":

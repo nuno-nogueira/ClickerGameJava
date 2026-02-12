@@ -36,6 +36,7 @@
 
                </ScrollPane>
                <VBox fx:id="statsPanel" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" StackPane.alignment="CENTER" />
+               <VBox fx:id="prestigePanel" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" visible="false" />
             </children>
          </StackPane>
       </center>
@@ -46,6 +47,7 @@
                <Button fx:id="buildingTabButton1" mnemonicParsing="false" onAction="#onBuildingTabClicked" text="Buildings Panel" />
                <Button fx:id="upgradeTabButton" mnemonicParsing="false" onAction="#onUpgradeTabClicked" text="Upgrades Panel" />
                <Button fx:id="statsTabButton" mnemonicParsing="false" onAction="#onStatsTabClicked" text="Stats Panel" />
+               <Button fx:id="prestigeTabButton" mnemonicParsing="false" onAction="#onPrestigeTabClicked" text="Prestige Panel" />
             </children>
          </HBox>
       </bottom>

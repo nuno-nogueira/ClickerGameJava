@@ -5,7 +5,7 @@ public class Building {
     public int quantity;
     private double production;
     private String name;
-    private double multiplier;
+    public double multiplier;
     private String synergyTarget;
     private double synergyValue;
     public double synergyBuff;

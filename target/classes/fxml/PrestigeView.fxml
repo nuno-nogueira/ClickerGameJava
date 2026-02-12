@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clickergame.ui.PrestigeController">
+   <children>
+      <TilePane fx:id="cookieRequirementPane" alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="224.0" prefWidth="600.0">
+         <children>
+            <Label text="Prestige" TilePane.alignment="TOP_CENTER">
+               <TilePane.margin>
+                  <Insets top="15.0" />
+               </TilePane.margin>
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="cookieRequirementLabel" text="Cookie Requirement">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+               <TilePane.margin>
+                  <Insets bottom="15.0" />
+               </TilePane.margin>
+            </Label>
+            <Button fx:id="buyPrestige" mnemonicParsing="false" onAction="#buyPrestige" text="Buy Prestige" />
+            <Label fx:id="sugarCrystals" alignment="TOP_CENTER" text="Sugar Crystals" />
+         </children>
+      </TilePane>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="598.0">
+               <children>
+                  <GridPane layoutY="-3.0" prefHeight="500.0" prefWidth="600.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Pane prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="upName1" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="86.0" layoutY="6.0" text="Label" />
+                              <Label fx:id="upProgress1" layoutX="79.0" layoutY="23.0" text="Progress">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="upQuant1" layoutX="77.0" layoutY="47.0" text="Quantity" />
+                              <Button fx:id="upBtn1" layoutX="82.0" layoutY="68.0" mnemonicParsing="false" text="Buy" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <children>
+                              <Label fx:id="upName2" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="86.0" layoutY="6.0" text="Label" />
+                              <Label fx:id="upProgress2" layoutX="79.0" layoutY="23.0" text="Progress">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="upQuant2" layoutX="77.0" layoutY="47.0" text="Quantity" />
+                              <Button fx:id="upBtn2" layoutX="82.0" layoutY="68.0" mnemonicParsing="false" text="Buy" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                           <children>
+                              <Label fx:id="upName3" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="86.0" layoutY="6.0" text="Label" />
+                              <Label fx:id="upProgress3" layoutX="79.0" layoutY="23.0" text="Progress">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="upQuant3" layoutX="77.0" layoutY="43.0" text="Quantity" />
+                              <Button fx:id="upBtn3" layoutX="82.0" layoutY="68.0" mnemonicParsing="false" text="Buy" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                           <children>
+                              <Label fx:id="upName4" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="86.0" layoutY="6.0" text="Label" />
+                              <Label fx:id="upProgress4" layoutX="79.0" layoutY="23.0" text="Progress">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="upQuant4" layoutX="77.0" layoutY="43.0" text="Quantity" />
+                              <Button fx:id="upBtn4" layoutX="82.0" layoutY="68.0" mnemonicParsing="false" text="Buy" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <Label fx:id="upName5" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="86.0" layoutY="6.0" text="Label" />
+                              <Label fx:id="upProgress5" layoutX="79.0" layoutY="23.0" text="Progress">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="upQuant5" layoutX="77.0" layoutY="43.0" text="Quantity" />
+                              <Button fx:id="upBtn5" layoutX="82.0" layoutY="68.0" mnemonicParsing="false" text="Buy" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <children>
+                              <Label fx:id="upName6" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="86.0" layoutY="6.0" text="Label" />
+                              <Label fx:id="upProgress6" layoutX="79.0" layoutY="23.0" text="Progress">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="upQuant6" layoutX="77.0" layoutY="43.0" text="Quantity" />
+                              <Button fx:id="upBtn6" layoutX="82.0" layoutY="68.0" mnemonicParsing="false" text="Buy" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="upName7" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="86.0" layoutY="6.0" text="Label" />
+                              <Label fx:id="upProgress7" layoutX="79.0" layoutY="23.0" text="Progress">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="upQuant7" layoutX="77.0" layoutY="43.0" text="Quantity" />
+                              <Button fx:id="upBtn7" layoutX="82.0" layoutY="68.0" mnemonicParsing="false" text="Buy" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="upName8" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="86.0" layoutY="6.0" text="Label" />
+                              <Label fx:id="upProgress8" layoutX="79.0" layoutY="23.0" text="Progress">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="upQuant8" layoutX="77.0" layoutY="43.0" text="Quantity" />
+                              <Button fx:id="upBtn8" layoutX="82.0" layoutY="68.0" mnemonicParsing="false" text="Buy" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="upName9" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="86.0" layoutY="6.0" text="Label" />
+                              <Label fx:id="upProgress9" layoutX="79.0" layoutY="23.0" text="Progress">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="upQuant9" layoutX="77.0" layoutY="43.0" text="Quantity" />
+                              <Button fx:id="upBtn9" layoutX="82.0" layoutY="68.0" mnemonicParsing="false" text="Buy" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="upName10" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="86.0" layoutY="6.0" text="Label" />
+                              <Label fx:id="upProgress10" layoutX="79.0" layoutY="23.0" text="Progress">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="upQuant10" layoutX="77.0" layoutY="43.0" text="Quantity" />
+                              <Button fx:id="upBtn10" layoutX="82.0" layoutY="68.0" mnemonicParsing="false" text="Buy" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="upName11" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="86.0" layoutY="6.0" text="Label" />
+                              <Label fx:id="upProgress11" layoutX="79.0" layoutY="23.0" text="Progress">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="upQuant11" layoutX="77.0" layoutY="43.0" text="Quantity" />
+                              <Button fx:id="upBtn11" layoutX="82.0" layoutY="68.0" mnemonicParsing="false" text="Buy" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="upName12" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="86.0" layoutY="6.0" text="Label" />
+                              <Label fx:id="upProgress12" layoutX="79.0" layoutY="23.0" text="Progress">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="upQuant12" layoutX="77.0" layoutY="43.0" text="Quantity" />
+                              <Button fx:id="upBtn12" layoutX="82.0" layoutY="68.0" mnemonicParsing="false" text="Buy" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                           <children>
+                              <Label fx:id="upName13" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="86.0" layoutY="6.0" text="Label" />
+                              <Label fx:id="upProgress13" layoutX="79.0" layoutY="23.0" text="Progress">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="upQuant13" layoutX="77.0" layoutY="43.0" text="Quantity" />
+                              <Button fx:id="upBtn13" layoutX="82.0" layoutY="68.0" mnemonicParsing="false" text="Buy" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <children>
+                              <Label fx:id="upName14" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="86.0" layoutY="6.0" text="Label" />
+                              <Label fx:id="upProgress14" layoutX="79.0" layoutY="23.0" text="Progress">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="upQuant14" layoutX="77.0" layoutY="43.0" text="Quantity" />
+                              <Button fx:id="upBtn14" layoutX="82.0" layoutY="68.0" mnemonicParsing="false" text="Buy" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</VBox>

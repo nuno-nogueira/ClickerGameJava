@@ -12,7 +12,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
-//import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
 import javafx.animation.KeyFrame;
@@ -27,11 +26,13 @@ public class MainController {
     @FXML private VBox buildingPanel;
     @FXML private ScrollPane upgradePanel;
     @FXML private VBox statsPanel;
+    @FXML private VBox prestigePanel;
 
-    @FXML  private Button cookieTabButton;
+    @FXML private Button cookieTabButton;
     @FXML private Button buildingTabButton;
     @FXML private Button upgradeTabButton;
     @FXML private Button statsTabButton;
+    @FXML private Button prestigeTabButton;
 
     @FXML private Button clickButton;
     @FXML private Button cursorButton;
@@ -81,6 +82,7 @@ public class MainController {
     @FXML private UpgradesController upgradesController;
     @FXML private BuildingsController buildingsController;
     @FXML private StatsController statsController;
+    @FXML private PrestigeController prestigeController;
 
     @FXML
     public void initialize() {
@@ -111,14 +113,20 @@ public class MainController {
                 getClass().getResource("/fxml/StatsView.fxml")
             );
 
+            FXMLLoader prestigeLoader = new FXMLLoader(
+                getClass().getResource("/fxml/PrestigeView.fxml")
+            );
+
             Node upgradesRoot = upgradesLoader.load();
             Node buildingsRoot = buildingsLoader.load();
             Node statsRoot = statsLoader.load();
+            Node prestigeRoot = prestigeLoader.load();
 
             // Get the respective controller
             upgradesController = upgradesLoader.getController();
             buildingsController = buildingsLoader.getController();
             statsController = statsLoader.getController();
+            prestigeController = prestigeLoader.getController();
 
             // Initializing each controller
             upgradesController.initialize(gamestate);
@@ -128,6 +136,9 @@ public class MainController {
 
             buildingsController.setMainController(this);
             buildingsController.setup(gamestate);
+
+            prestigeController.setMainController(this);
+            prestigeController.setup(gamestate);
             
             // Getting the content of each controller
             statsPanel.getChildren().clear();
@@ -137,6 +148,9 @@ public class MainController {
 
             buildingPanel.getChildren().clear();
             buildingPanel.getChildren().add(buildingsRoot);
+
+            prestigePanel.getChildren().clear();
+            prestigePanel.getChildren().add(prestigeRoot);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -182,6 +196,10 @@ public class MainController {
         showPanel(statsPanel);
     }
 
+    @FXML private void showPrestigePanel() {
+        showPanel(prestigePanel);
+    }
+
     /*********** */
 
     @FXML void onCookieTabClicked() {
@@ -199,6 +217,10 @@ public class MainController {
     @FXML private void onStatsTabClicked() {
         showStatsPanel();
     } 
+
+    @FXML private void onPrestigeTabClicked() {
+        showPrestigePanel();
+    }
 
     @FXML private void onCookie() {
         gamestate.cookieClick();
@@ -219,9 +241,11 @@ public class MainController {
             coinsPerSecond.setText(income + " /s");
             gamestate.goldenCookieChance();
             buildingsController.refreshAllButtons();
+            upgradesController.refreshAllButtons();
 
             saveManager.save(gamestate.toSaveData());
-
+            
+            prestigeController.loadUI();
             // Refresh global stats to display the info
             statsController.refreshStats();
         })

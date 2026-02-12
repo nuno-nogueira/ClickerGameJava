@@ -15,14 +15,15 @@ public class GoldenCookieSystem {
     public GoldenCookie activeCookie = null; 
     public double cookieChance;
     public int goldenCookieClicks;
+    public double lifespanMultiplier = 1.0d;
 
     public GoldenCookieSystem(GameState gameState, CriticalSystem criticalSystem) {
         this.gameState = gameState;
         this.criticalSystem = criticalSystem;
 
-        goldenCookieList.put("golden1", new GoldenCookie(10, 30, "+10% Critical Chance for 30s!", "critChance"));
-        goldenCookieList.put("golden2", new GoldenCookie(10, 10, "10x Critical Power for 10s!", "critPower"));
-        goldenCookieList.put("golden3", new GoldenCookie(100, 5, "100% Critical Chance for 5s!", "critChance"));
+        goldenCookieList.put("golden1", new GoldenCookie(10, 30.0, "+10% Critical Chance for 30s!", "critChance"));
+        goldenCookieList.put("golden2", new GoldenCookie(10, 10.0, "10x Critical Power for 10s!", "critPower"));
+        goldenCookieList.put("golden3", new GoldenCookie(100, 5.0, "100% Critical Chance for 5s!", "critChance"));
         goldenCookieList.put("golden4", new GoldenCookie(10, 0, "FREE COOKIES!", "cookies"));
     }
 
@@ -37,7 +38,7 @@ public class GoldenCookieSystem {
         }
 
         activeCookie.decreaseLifespan();
-        if (activeCookie.GetLifespan() <= 0) {
+        if ((activeCookie.GetLifespan() * lifespanMultiplier) <= 0) {
             removeEffect(activeCookie);
             activeCookie = null;
             stopTimer();
@@ -46,7 +47,7 @@ public class GoldenCookieSystem {
 
     public void activateCookie(GoldenCookie cookie) {
         activeCookie = cookie;
-        cookie.resetLifespan(cookie.GetLifespan());
+        cookie.resetLifespan(cookie.GetLifespan() * lifespanMultiplier);
         goldenCookieClicks++;
 
         switch (cookie.GetTypeId()) {

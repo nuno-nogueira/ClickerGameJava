@@ -297,18 +297,19 @@ public class UpgradesController {
             priceLabel.setText(String.valueOf(u.GetPrice()));
             nameLabel.setText(u.getName());
             descLabel.setText(u.getDescription());
+            String buffValue = String.valueOf((int)u.GetMultiplier());
             switch (u.getTargetID()) {
                 case "click":
-                    multiplierLabel.setText(String.valueOf((int)u.GetMultiplier()) + "x Clicks");
+                    multiplierLabel.setText(buffValue + "x Clicks");
                     break;
                 case "critChance":
-                    multiplierLabel.setText("+" + String.valueOf((int)u.GetMultiplier()) + "% Critical Chance");
+                    multiplierLabel.setText("+" + buffValue + "% Critical Chance");
                     break;
                 case "critPower":
-                    multiplierLabel.setText(String.valueOf((int)u.GetMultiplier()) + "x Critical Power");
+                    multiplierLabel.setText(buffValue + "x Critical Power");
                     break;
                 default:
-                    multiplierLabel.setText(String.valueOf((int)u.GetMultiplier()) + "x Production");
+                    multiplierLabel.setText(buffValue + "x Production");
                     break;
             }
 
