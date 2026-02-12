@@ -256,7 +256,7 @@ public class BuildingsController {
 
         switch(next.GetTargetId()) {
             case "global":
-                globalSynergyLabel.setText(gamestate.GetTotalBuildings() + " / " + required + " buildingsss: " + (next.GetValue() / 100) + "% Global Production");
+                globalSynergyLabel.setText(gamestate.GetTotalBuildings() + " / " + required + " buildings: " + (next.GetValue() / 100) + "% Global Production");
                 break;
             case "critPower":
                 globalSynergyLabel.setText(gamestate.GetTotalBuildings() + " / " + required + " buildings: " + (next.GetValue() / 100) + "% Critical Power");

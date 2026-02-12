@@ -17,6 +17,11 @@ public class GameState{
     public int totalCookies;
     public double passiveIncome;
     public double passiveIncomeMultiplier;
+    public int clickOverload = 200;
+    public int clickOverloadCharge = 0;
+    public boolean overloadActive = false;
+    public int overloadLifespan = 10;
+    public long overloadEndTime = 0;
 
     private BuildingSystem buildingSystem;
     private UpgradeSystem upgradeSystem = new UpgradeSystem();
@@ -74,6 +79,9 @@ public class GameState{
     public Prestige getPrestige(Integer id) { return prestigeSystem.getPrestige(id); };
     public Boolean canBuyUpgrade(String id) { return buildingSystem.canBuy(id, coins); };
 
+    public Integer getClickOverload() { return clickOverload; };
+    public Integer getClickOverloadCharge() { return clickOverloadCharge; };
+
     // Methods
     public double cookieClick() {
         boolean isCritical = criticalSystem.tryCritical(Math.random() * 100);
@@ -82,10 +90,23 @@ public class GameState{
         if (isCritical) {
             coins = (globalMultiplier * criticalSystem.applyCritical(coins, clicks, totalCookies));
         } else {
-            coins += (globalMultiplier * clicks);
+            coins += (globalMultiplier * clicks + (passiveIncome / 0.4));
             totalCookies += (globalMultiplier * clicks);
         } 
+
+        // Apply multiplier while the click overload is active
+        if(overloadActive) {
+            coins += (clicks * 5);
+            totalCookies += (clicks * 5);
+        }
+
         return coins;
+    }
+
+    public void activeClickOverload() {
+        // Active click overload
+        overloadActive = true;
+        overloadEndTime = System.currentTimeMillis() + 10000;
     }
 
     public void buyUpgrade(String id) {
@@ -297,7 +318,6 @@ public class GameState{
             Prestige p = prestigeSystem.getPrestige(id);
             if (p != null ) {
                 p.upgradeLevel = upgradeLevel;
-                System.out.println(p.GetName() + " -> " + p.upgradeLevel);
             }
         });
         prestigeSystem.totalPrestiges = save.totalPrestiges;
@@ -365,16 +385,5 @@ public class GameState{
             u.purchased = false;
             
         });
-
-        // // Add prestige buffs (which are permanent)
-        // for (HashMap.Entry<Integer, Prestige> entry : prestigeSystem.prestiges.entrySet()) {
-        //     Prestige prestige = entry.getValue();
-
-        //     if (prestige.GetPurchased() || prestige.GetUpgradeLevel() > 0) {
-        //         for (int i = 0; i < prestige.GetUpgradeLevel(); i++) {
-        //             prestigeSystem.buy(entry.getKey());
-        //         }
-        //     }
-        // }
     }
 }

@@ -83,9 +83,6 @@ public class GoldenCookieSystem {
 
     private void startTimer() {
         if (timer == null || timer.isShutdown()) {
-            if ( activeCookie.GetTypeId() == "critChance" ) {
-            } else if (activeCookie.GetTypeId() == "critPower" ) {
-            }
             timer = Executors.newSingleThreadScheduledExecutor();
             timer.scheduleAtFixedRate(this::updateGoldenCookies, 1, 1, TimeUnit.SECONDS);
         }

@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.StackPane;
@@ -72,6 +73,10 @@ public class MainController {
 
     @FXML public Label coinsLabel;
     @FXML private Label coinsPerSecond;
+
+    @FXML private Label overloadProgressLabel;
+    @FXML private ProgressBar overloadBar;
+    @FXML private Label overloadTimer;
 
     @FXML private Button upgradeButton;
 
@@ -158,6 +163,8 @@ public class MainController {
         clickButton.setText("Cookie Button!");
         coinsLabel.setText("" + gamestate.GetCoins());    
         coinsPerSecond.setText(gamestate.updatePassiveIncome() + " /s");
+        overloadProgressLabel.setText(gamestate.clickOverloadCharge + "/" + gamestate.clickOverload);
+        overloadBar.setProgress(Math.min(1.0, (double) gamestate.clickOverloadCharge / gamestate.clickOverload));
 
         startCursorLoop();
     }
@@ -224,6 +231,13 @@ public class MainController {
 
     @FXML private void onCookie() {
         gamestate.cookieClick();
+
+        gamestate.clickOverloadCharge++;
+
+        overloadProgressLabel.setText(gamestate.clickOverloadCharge + "/" + gamestate.clickOverload);
+        overloadBar.setProgress(Math.min(1.0, (double) gamestate.clickOverloadCharge / gamestate.clickOverload));
+
+
         coinsLabel.setText((int)gamestate.GetCoins() + " cookies");
         buildingsController.refreshAllButtons();
         upgradesController.refreshAllButtons();
@@ -235,7 +249,7 @@ public class MainController {
     */
 
     gameLoop = new Timeline(
-        new KeyFrame(Duration.seconds(1), e -> {
+        new KeyFrame(Duration.millis(100), e -> {
             double income = gamestate.updatePassiveIncome();
             coinsLabel.setText((int)gamestate.GetCoins() + " cookies");
             coinsPerSecond.setText(income + " /s");
@@ -243,8 +257,28 @@ public class MainController {
             buildingsController.refreshAllButtons();
             upgradesController.refreshAllButtons();
 
+            // Verify if the click overload is going to be activated
+            if (gamestate.clickOverloadCharge >= gamestate.clickOverload) {
+                gamestate.clickOverloadCharge = 0;
+                overloadProgressLabel.setText(gamestate.clickOverloadCharge + "/" + gamestate.clickOverload);
+                overloadBar.setProgress(Math.min(1.0, (double) gamestate.clickOverloadCharge / gamestate.clickOverload));
+                gamestate.activeClickOverload();
+            }
+
+            if (gamestate.overloadActive && System.currentTimeMillis() >= gamestate.overloadEndTime) {
+                gamestate.overloadActive = false;
+            } 
+
+            if (gamestate.overloadActive) {
+                overloadTimer.setVisible(true);
+                long timeLeft = gamestate.overloadEndTime - System.currentTimeMillis();
+                overloadTimer.setText(String.format("OVERLOAD! (%.1fs left)", Math.max(0, timeLeft / 1000.0)));
+            } else {
+                overloadTimer.setVisible(false);
+            }
+
+
             saveManager.save(gamestate.toSaveData());
-            
             prestigeController.loadUI();
             // Refresh global stats to display the info
             statsController.refreshStats();
