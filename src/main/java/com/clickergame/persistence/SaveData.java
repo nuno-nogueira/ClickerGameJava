@@ -19,6 +19,7 @@ public class SaveData implements Serializable{
     /******** BUILDINGS ********/
     public HashMap<String, Integer> buildingQuantitites = new HashMap<>();
     public HashMap<String, Integer> buildingPrices = new HashMap<>();
+    public HashMap<String, Double> buildingSynergies = new HashMap<>();
 
     /******** UPGRADES ********/
     public HashMap<String, Boolean> purchasedUpgrades = new HashMap<>();

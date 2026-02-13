@@ -90,29 +90,28 @@ public class PrestigeController {
     private Map<Integer, Label> upProgress = new HashMap<>();
     public Map<Button, Integer> upBtnMap = new HashMap<>();
 
+    
     @FXML
     public void initialize() {
 
     }
 
+    //*** Helper methods to update UI elements***
     public void setup(GameState gamestate) {
         this.gamestate = gamestate;
         loadUI();
     }
 
-    public boolean verifyCookiesAmount() {
-        boolean isAvailable = gamestate.GetTotalClicks() >= gamestate.getPrestigePrice() ? true : false;
-        return isAvailable;
-    }
-
-    public void loadUI() {       
+    public void loadUI() {
+        // Load UI elements       
         addButtons();  
         addQuantities(); 
         addProgress();
         addNames();
 
-        sugarCrystals.setText("You have " + gamestate.getSugarCrystals() + "crystals! :)");
+        sugarCrystals.setText("You have " + gamestate.getSugarCrystals() + " crystals! :)");
 
+        // Update prestige list
         for (Map.Entry<Button, Integer> entry : upBtnMap.entrySet()) {
             Button button = entry.getKey();
             Integer upgradeID = entry.getValue();
@@ -180,12 +179,20 @@ public class PrestigeController {
         }
     }
 
+    //*** Helper methods to update prestige elements***
+
+    public boolean verifyCookiesAmount() {
+        boolean isAvailable = gamestate.GetTotalClicks() >= gamestate.getPrestigePrice() ? true : false;
+        return isAvailable;
+    }
+ 
     public void buyPrestige() {
         gamestate.buyPrestige();
         loadUI();
     }
 
-    // ---- Helper methods to register UI elements in maps ----
+
+    //*** Helper methods to register UI elements in maps ***
     private void addButtons() {
         upBtnMap.put(upBtn1, 1);
         upBtnMap.put(upBtn2, 2);

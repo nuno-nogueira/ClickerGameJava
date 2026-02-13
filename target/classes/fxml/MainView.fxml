@@ -46,12 +46,10 @@
                      <Label fx:id="overloadTimer" text="Overload Time" translateY="205.0" />
                   </children>
                </VBox>
-               <VBox fx:id="buildingPanel" alignment="CENTER" prefHeight="200.0" prefWidth="200.0" spacing="10.0">
-                  <children>
-                     <ScrollPane fx:id="upgradePanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+               <VBox fx:id="buildingPanel" alignment="CENTER" prefHeight="200.0" prefWidth="200.0" spacing="10.0" />
+               <ScrollPane fx:id="upgradePanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
 
                </ScrollPane>
-                  </children></VBox>
                <VBox fx:id="statsPanel" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" visible="false" StackPane.alignment="CENTER" />
                <VBox fx:id="prestigePanel" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" visible="false" />
             </children>

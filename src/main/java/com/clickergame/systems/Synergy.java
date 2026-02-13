@@ -7,13 +7,13 @@ import com.clickergame.core.GameState;
 import com.clickergame.core.GoldenCookieSystem;
 
 public class Synergy {
-    private String targetId;
-    private double value;
-    private HashMap<String, Integer> requirement = new HashMap<>();
+    private String targetId; // Which stat is impacted by the synergy
+    private double value; // The synergy's buff value
+    private HashMap<String, Integer> requirement = new HashMap<>(); // The requirements to increase the synergy's buff
     private GameState gamestate;
     private CriticalSystem criticalSystem;
     private GoldenCookieSystem goldenCookieSystem;
-    public boolean isClaimed;
+    public boolean isClaimed; // Verify if a synergy is claimed
     
     public Synergy(GameState gamestate, CriticalSystem criticalSystem, GoldenCookieSystem goldenCookieSystem, String targetId, double value, HashMap<String, Integer> requirement, boolean isClaimed) {
         this.gamestate = gamestate;

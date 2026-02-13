@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 
@@ -16,5 +18,10 @@
       <Label fx:id="goldenCookieChance" text="Golden Cookie Chance" />
       <Label fx:id="goldenCookieClicks" text="Golden Cookie Clicks" />
       <Label fx:id="totalPrestiges" text="Total Prestiges" />
+      <Button fx:id="resetButton" mnemonicParsing="false" onAction="#resetProgress" text="Button">
+         <VBox.margin>
+            <Insets top="30.0" />
+         </VBox.margin>
+      </Button>
    </children>
 </VBox>

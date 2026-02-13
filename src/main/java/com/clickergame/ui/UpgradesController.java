@@ -272,9 +272,12 @@ public class UpgradesController {
 
     private GameState gamestate;
 
+    //*** Main Methods ***
     @FXML 
     public void initialize(GameState gamestate) {
         this.gamestate = gamestate;
+
+        // Create all UI elements
         addButtons();
         addNames();
         addDescriptions();
@@ -322,9 +325,14 @@ public class UpgradesController {
     }
 
     private void buyUpgrade(String id, Button button) {
+        /*
+        * Buy an upgrade and set the corresponding panel invisible (one time purchases)
+        */
         gamestate.applyUpgrade(id);
         upgradePaneMap.get(id).setVisible(false);
     }
+
+    //*** Helper methods to update UI elements***
 
     private void updateButtons(String id, Button button) {
         Upgrade upgrade = gamestate.getUpgrade(id);
@@ -338,7 +346,15 @@ public class UpgradesController {
         }
     }
 
-    // ---- Helper methods to register UI elements in maps ----
+    public void refreshAllButtons() {
+        for (Map.Entry<Button, String> entry : upgradeButtonMap.entrySet()) { 
+            updateButtons(entry.getValue(), entry.getKey());
+        }
+    }
+
+    
+    //*** Helper methods to register UI elements in maps ***
+
     private void addButtons() {
         upgradeButtonMap.put(clickButton1, "click1");
         upgradeButtonMap.put(cursorButton1, "cursor1");
@@ -638,11 +654,5 @@ public class UpgradesController {
         upgradePaneMap.put("bank4", bankPane4);
         upgradePaneMap.put("temple3", templePane3);
         upgradePaneMap.put("temple4", templePane4);
-    }
-
-    public void refreshAllButtons() {
-        for (Map.Entry<Button, String> entry : upgradeButtonMap.entrySet()) { 
-            updateButtons(entry.getValue(), entry.getKey());
-        }
     }
 }

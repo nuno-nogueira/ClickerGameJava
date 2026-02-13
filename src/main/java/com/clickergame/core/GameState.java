@@ -49,40 +49,50 @@ public class GameState{
     }
 
     // Getters
+    /******** CORE ********/
     public int GetClicks(){ return clicks; };
     public double GetCoins(){ return coins; };
 
+    /******** SYSTEMS ********/
     public BuildingSystem GetbuildingSystem() { return buildingSystem; };
     public UpgradeSystem GetUpgradeSystem() { return upgradeSystem; };
     public CriticalSystem GetCriticalSystem() { return criticalSystem; };
 
+    /******** TOTAL VALUES ********/
     public int GetTotalBuildings() { return totalBuildings; };
     public double GetGlobalMultiplier() { return globalMultiplier; };
     public int GetTotalClicks() { return totalClicks; };
     public int GetTotalCookies() { return totalCookies; };
 
+    /******** CRITICAL SYSTEM ********/
     public double GetCriticalChance() { return criticalSystem.GetCriticalChance(); };
     public double GetCriticalPower() { return criticalSystem.GetCriticalPower(); };
     
+    /******** GOLDEN COOKIE ********/
     public double GetGoldenChance() { return goldenCookieSystem.GetCookieChance(); };
     public int getGoldenClicks() { return goldenCookieSystem.GetGoldenClicks(); };
+
+    /******** PASSIVE SYSTEM ********/
     public double getPassiveIncome() { return passiveIncome; };
     public double getPassiveIncomeMultiplier() { return passiveIncomeMultiplier; };
 
+    /******** PRESTIGE SYSTEM ********/
     public int getSugarCrystals() { return prestigeSystem.getCrystals(); };
     public int getTotalPrestiges() { return prestigeSystem.getTotalPrestiges(); };
     public int getPrestigePrice() { return prestigeSystem.getPrice(); };
     public HashMap<Integer, Prestige> getAllPrestiges() { return prestigeSystem.getAllPrestiges(); };
 
+    /******** FETCH SINGLE ELEMENTS ********/
     public Building getBuilding(String id) { return buildingSystem.getUpgrade(id); };
     public Upgrade getUpgrade(String id) { return upgradeSystem.getUpgrade(id); };
     public Prestige getPrestige(Integer id) { return prestigeSystem.getPrestige(id); };
     public Boolean canBuyUpgrade(String id) { return buildingSystem.canBuy(id, coins); };
 
+    /******** CLICK OVERLOAD ********/
     public Integer getClickOverload() { return clickOverload; };
     public Integer getClickOverloadCharge() { return clickOverloadCharge; };
 
-    // Methods
+    // CLICK METHODS
     public double cookieClick() {
         boolean isCritical = criticalSystem.tryCritical(Math.random() * 100);
         this.totalClicks++;
@@ -90,7 +100,7 @@ public class GameState{
         if (isCritical) {
             coins = (globalMultiplier * criticalSystem.applyCritical(coins, clicks, totalCookies));
         } else {
-            coins += (globalMultiplier * clicks + (passiveIncome / 0.4));
+            coins += (globalMultiplier * clicks + (passiveIncome / 4));
             totalCookies += (globalMultiplier * clicks);
         } 
 
@@ -99,7 +109,6 @@ public class GameState{
             coins += (clicks * 5);
             totalCookies += (clicks * 5);
         }
-
         return coins;
     }
 
@@ -109,6 +118,7 @@ public class GameState{
         overloadEndTime = System.currentTimeMillis() + 10000;
     }
 
+    // BUY ITEMS
     public void buyUpgrade(String id) {
         if (buildingSystem.canBuy(id, coins)) {
             coins -= buildingSystem.getUpgrade(id).GetPrice();
@@ -157,7 +167,7 @@ public class GameState{
 
             switch (u.getTargetID()) {
                 case "click":
-                    clicks = (int)(clicks * u.GetMultiplier());
+                    clicks *= (int)(u.GetMultiplier());
                     break;
                 case "critChance":
                     criticalSystem.criticalChance += u.GetMultiplier();
@@ -170,9 +180,12 @@ public class GameState{
                     buildingSystem.applyMultiplier(u.getTargetID(), u.GetMultiplier());
                     break;
             }
+
+            u.markAsPurchased();
         }
     }
 
+    // PASSIVE INCOME
     public double updatePassiveIncome() {
         this.passiveIncome = (buildingSystem.totalPassiveIncome() * globalMultiplier * passiveIncomeMultiplier);
         coins += this.passiveIncome;
@@ -180,6 +193,7 @@ public class GameState{
         return this.passiveIncome;
     }
 
+    // GOLDEN COOKIE
     public void goldenCookieChance() {
         if (goldenCookieSystem.activeCookie == null) {
             boolean isThereCookie = Math.random() * 100 < goldenCookieSystem.GetCookieChance() ? true : false;
@@ -192,6 +206,7 @@ public class GameState{
         }
     }
 
+    // SYNERGIES
     public void verifyGlobalSynergies() {
         for (Synergy synergy : globalSynergies.values()) {
             HashMap<String, Integer> requirement = synergy.GetRequirement();
@@ -224,6 +239,7 @@ public class GameState{
         return Math.min(1.0, (double) totalBuildings / required);
     }
 
+    // SAVE SYSTEM
     public SaveData toSaveData() {
         SaveData save = new SaveData();
 
@@ -241,7 +257,9 @@ public class GameState{
         buildingSystem.getAllUpgrades().forEach((id, b) -> {
             save.buildingQuantitites.put(id, b.GetQuantity());
             save.buildingPrices.put(id, b.GetPrice());
+            save.buildingSynergies.put(id, b.GetSynergyValue());
         });
+        
 
         /******** UPGRADES ********/
         upgradeSystem.getAllUpgrades().forEach((id, u) -> {
@@ -291,6 +309,11 @@ public class GameState{
             if (b != null) b.price = price;
         });
 
+        save.buildingSynergies.forEach((id, value) -> {
+            Building b = buildingSystem.getUpgrade(id);
+            if (b != null ) b.synergyBuff = value;
+        });
+
         /******** UPGRADES ********/
         save.purchasedUpgrades.forEach((id, purchased) -> {
             Upgrade u = upgradeSystem.getUpgrade(id);
@@ -336,7 +359,7 @@ public class GameState{
         // Reset buildings purchases
         buildingSystem.getAllUpgrades().forEach((id, b) -> {
             // Reverse the synergy & building buffs
-            if (b.quantity > 0) {
+            if (b.GetQuantity() >= 10) {
                 switch (b.GetSynergyTarget()) {
                 case "global":
                     globalMultiplier -= (b.GetSynergyValue() / 100);
@@ -359,18 +382,22 @@ public class GameState{
                 }
             }
 
-            b.price /= (int)(b.priceIncrement / b.quantity);
-            b.quantity = 0;
-            b.multiplier = 1.0d;
+            if (b.GetQuantity() > 0) {
+                b.price = b.basePrice;
+                b.quantity = 0;
+                b.multiplier = 1.0d;
+            }
+            
         });
 
         // Reset upgrade purchases
         upgradeSystem.getAllUpgrades().forEach((id, u) -> {
             // Reverse the upgrade buffs
             if (u.purchased) {
+                System.out.println("test");
                 switch (u.getTargetID()) {
                 case "click":
-                    clicks = (int)(clicks / u.GetMultiplier());
+                    clicks /= u.GetMultiplier();
                     break;
                 case "critChance":
                     criticalSystem.criticalChance -= u.GetMultiplier();

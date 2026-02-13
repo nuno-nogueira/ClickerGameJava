@@ -2,6 +2,7 @@ package com.clickergame.ui;
 
 import com.clickergame.core.GameState;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 public class StatsController {
@@ -17,16 +18,21 @@ public class StatsController {
     @FXML private Label goldenCookieClicks;
     @FXML private Label totalPrestiges;
 
+    @FXML private Button resetButton;
+
     private GameState gamestate;
     private MainController mainController;
+    private BuildingsController buildingsController;
+    private UpgradesController upgradesController;
 
     @FXML
     public void initialize() {
     }
-
-
-    public void setup(GameState gamestate) {
+    
+    public void setup(GameState gamestate, BuildingsController buildingsController, UpgradesController upgradesController) {
         this.gamestate = gamestate;
+        this.buildingsController = buildingsController;
+        this.upgradesController = upgradesController;
         refreshStats();
     }
 
@@ -42,7 +48,14 @@ public class StatsController {
        this.goldenCookieChance.setText("Golden Cookie Chance -> " + gamestate.GetGoldenChance() + "%");
        this.goldenCookieClicks.setText("Golden Cookie Clicks -> " + gamestate.getGoldenClicks());
        this.totalPrestiges.setText("Total Prestiges -> " + gamestate.getTotalPrestiges());
+       this.resetButton.setText("Reset All Progress");
        ;
+    }
+
+    public void resetProgress() {
+        gamestate.resetProgress();
+        buildingsController.setup(gamestate);
+        upgradesController.initialize(gamestate);
     }
 
     public void setMainController(MainController controller) {

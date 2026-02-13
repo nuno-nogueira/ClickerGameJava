@@ -1,9 +1,9 @@
 package com.clickergame.systems;
 
 public class Upgrade {
-    private int price;
-    private double multiplier;
-    private String targetID;
+    private int price; // Set the upgrade's price
+    private double multiplier; // Sets how much a buff is increased
+    private String targetID; // Which stat is impacted
     private String name;
     private String description;
     public Boolean purchased = false;

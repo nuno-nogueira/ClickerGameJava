@@ -62,32 +62,77 @@ public class BuildingsController {
     private MainController mainController;
     private GameState gamestate;
 
-
+    //*** Initialization Methods ***
     @FXML
     public void initialize() {
     }
 
-    private void buyBuilding(String id, Button button) {
-        implementBuilding(id, button);
-        updateButtons(button, id);
-
-        Label updateLabel = buildingLabelMap.get(id);
-        if (gamestate.getBuilding(id).GetQuantity() == 1) {
-            updateLabel.setText(gamestate.getBuilding(id).GetQuantity() + " " + id);
-        } else {
-            updateLabel.setText(gamestate.getBuilding(id).GetQuantity() + " " + id + "s");
-        }  
-        
-        Label updatePrice = buildingQuantityMap.get(id);
-        updatePrice.setText("" + gamestate.getBuilding(id).GetPrice());
-
-        mainController.coinsLabel.setText(gamestate.GetCoins() + " cookies");
+    public void setMainController(MainController controller) {
+        this.mainController = controller;
     }
 
+    public void setup(GameState gamestate) {
+        /**
+         * Initialize main UI elements
+         */
+        this.gamestate = gamestate;
+
+        // Create UI elements
+        addButtons();
+        addLabels();
+        addQuantities();
+        addSynergies();
+
+        // Assign lambda handlers to all building buttons
+        for(Map.Entry<Button, String> entry : buildingButtonMap.entrySet()) {
+            Button button = entry.getKey();
+            String buildingId = entry.getValue();
+
+            button.setOnAction(e -> implementBuilding(buildingId, button));
+            updateButtons(button, buildingId);
+        }
+
+        // Assign lambda handlers to all building quantity labels
+        for(Map.Entry<String, Label> entry : buildingLabelMap.entrySet()) {
+            Label label = entry.getValue();
+            String buildingId = entry.getKey();
+            Building building = gamestate.getBuilding(buildingId);
+
+            label.setText(building.GetQuantity() + " " + buildingId + "s");
+        }
+
+        // Assign lambda handlers to all building price labels
+        for (Map.Entry<String, Label> entry : buildingQuantityMap.entrySet()) {
+            Label label = entry.getValue();
+            String buildingId = entry.getKey();
+            Building building = gamestate.getBuilding(buildingId);
+            label.setText("" + building.GetPrice());
+        }
+
+        // Assign lambda handlers to all building synergy value labels
+        for (Map.Entry<String, Label> entry : buildingSynergyMap.entrySet()) {
+            Label label = entry.getValue();
+            String buildingId = entry.getKey();
+            label.setVisible(false);
+
+            updateSynergyLabel(label, buildingId);
+        }
+
+        updateGlobalSynergyLabel();
+    }
+
+    //*** Building Method ***
+    
     private void implementBuilding(String id, Button button) {
+        /**
+         * Buy the building selected & update the building's labels accordingly
+         */
+    
+        // Buy a building
         gamestate.buyUpgrade(id);
         updateButtons(button, id);
 
+        // Update the building labels
         Label updateLabel = buildingLabelMap.get(id);
         if (gamestate.getBuilding(id).GetQuantity() == 1) {
             updateLabel.setText(gamestate.getBuilding(id).GetQuantity() + " " + id);
@@ -100,19 +145,58 @@ public class BuildingsController {
 
         Label updateSynergy = buildingSynergyMap.get(id);
 
+        // Verify if there's a new synergy buff
         gamestate.verifyGlobalSynergies();
-        updateGlobalSynergyUI();
         updateGlobalSynergyLabel();
         updateSynergyLabel(updateSynergy, id);
+
         mainController.coinsLabel.setText(gamestate.GetCoins() + " cookies");
     }
 
-    private void updateSynergyLabel(Label label, String id) {
-        if (gamestate.getBuilding(id).GetQuantity() == 10)  {
-            label.setVisible(true);
-        } 
+    //*** Helper methods to update Synergies***
 
-        if (gamestate.getBuilding(id).GetQuantity() % 10 == 0) {
+    public void updateGlobalSynergyLabel() {
+        /**
+         * Update the global synergy progress and its indicator
+         */
+
+        // Verify the global synergy progress and update its UI elements
+        double progress = gamestate.getGlobalSynergyProgress();
+        globalBar.setProgress(progress);
+        globalIndicator.setProgress(progress);
+
+        // Verify if there's a next synergy buff, and if there is, get its info
+        Synergy next = gamestate.getNextGlobalSynergy();
+        if (next == null) {
+            globalSynergyLabel.setText("All synergies unlocked");
+            return;
+        }
+
+        // Get the total amount of buildings required for the next synergy buff, and update the UI accordingly
+        int required = next.GetRequirement().get("global");
+        switch(next.GetTargetId()) {
+            case "global":
+                globalSynergyLabel.setText(gamestate.GetTotalBuildings() + " / " + required + " buildings: " + (next.GetValue() / 100) + "% Global Production");
+                break;
+            case "critPower":
+                globalSynergyLabel.setText(gamestate.GetTotalBuildings() + " / " + required + " buildings: " + (next.GetValue() / 100) + "% Critical Power");
+                break;
+            case "critChance":
+                globalSynergyLabel.setText(gamestate.GetTotalBuildings() + " / " + required + " buildings: " + next.GetValue() + "% Critical Chance");
+                break;
+            case "goldenCookie":
+                globalSynergyLabel.setText(gamestate.GetTotalBuildings() + " / " + required + " buildings: " + next.GetValue() + "% Golden Cookie Chance");
+                break;
+            default:
+                break;
+        }
+
+    }
+ 
+    private void updateSynergyLabel(Label label, String id) {
+        if (gamestate.getBuilding(id).GetQuantity() >= 10)  {
+            label.setVisible(true);
+
             switch (gamestate.getBuilding(id).GetSynergyTarget()) {
                 case "global":
                     label.setText("Synergy-> +" + gamestate.getBuilding(id).GetSynergyBuff() + "% Global Production");
@@ -132,9 +216,11 @@ public class BuildingsController {
         }
     }
 
+    //*** Helper methods to update UI elements***
     private void updateButtons(Button button, String id) {
         Building building = gamestate.getBuilding(id);
             
+        // Verify the user has enough coins to buy an upgrade or not, and update the UI accordingly
         if (gamestate.GetCoins() >= building.GetPrice()) {
             button.setDisable(false);
             button.setStyle("");
@@ -144,8 +230,17 @@ public class BuildingsController {
         }
     }
 
+    public void refreshAllButtons() {
+        /**
+         * Yes, thats right, it refreshes all buttons!
+         */
+        for (Map.Entry<Button, String> entry : buildingButtonMap.entrySet()) { 
+            updateButtons(entry.getKey(), entry.getValue());
+        }
+    }
 
-    // ---- Helper methods to register UI elements in maps ----
+    //*** Helper methods to register UI elements in maps ***
+
     private void addButtons() {
         buildingButtonMap.put(cursorButton, "cursor");
         buildingButtonMap.put(grandmaButton, "grandma");
@@ -186,90 +281,5 @@ public class BuildingsController {
         buildingSynergyMap.put("temple", templeSynergy);
     }
 
-    public void refreshAllButtons() {
-        for (Map.Entry<Button, String> entry : buildingButtonMap.entrySet()) { 
-            updateButtons(entry.getKey(), entry.getValue());
-        }
-    }
 
-    public void setMainController(MainController controller) {
-        this.mainController = controller;
-    }
-
-    public void setup(GameState gamestate) {
-        this.gamestate = gamestate;
-        addButtons();
-        addLabels();
-        addQuantities();
-        addSynergies();
-
-        // Assign lambda handlers to all upgrade buttons
-        for(Map.Entry<Button, String> entry : buildingButtonMap.entrySet()) {
-            Button button = entry.getKey();
-            String buildingId = entry.getValue();
-
-            button.setOnAction(e -> buyBuilding(buildingId, button));
-            updateButtons(button, buildingId);
-        }
-
-        // Assign lambda handlers to all upgrade labels
-        for(Map.Entry<String, Label> entry : buildingLabelMap.entrySet()) {
-            Label label = entry.getValue();
-            String buildingId = entry.getKey();
-            Building building = gamestate.getBuilding(buildingId);
-
-            label.setText(building.GetQuantity() + " " + buildingId + "s");
-        }
-
-        // Assign lambda handlers to all upgrade labels
-        for (Map.Entry<String, Label> entry : buildingQuantityMap.entrySet()) {
-            Label label = entry.getValue();
-            String buildingId = entry.getKey();
-            Building building = gamestate.getBuilding(buildingId);
-            label.setText("" + building.GetPrice());
-        }
-
-        for (Map.Entry<String, Label> entry : buildingSynergyMap.entrySet()) {
-            Label label = entry.getValue();
-            String buildingId = entry.getKey();
-            Building building = gamestate.getBuilding(buildingId);
-            label.setText("Synergy Buff -> " + building.GetSynergyBuff());
-            label.setVisible(false);
-        }
-    }
-
-    private void updateGlobalSynergyUI() {
-        double progress = gamestate.getGlobalSynergyProgress();
-        globalBar.setProgress(progress);
-        globalIndicator.setProgress(progress);
-    }
-
-    private void updateGlobalSynergyLabel() {
-        Synergy next = gamestate.getNextGlobalSynergy();
-
-        if (next == null) {
-            globalSynergyLabel.setText("All synergies unlocked");
-            return;
-        }
-
-        int required = next.GetRequirement().get("global");
-
-        switch(next.GetTargetId()) {
-            case "global":
-                globalSynergyLabel.setText(gamestate.GetTotalBuildings() + " / " + required + " buildings: " + (next.GetValue() / 100) + "% Global Production");
-                break;
-            case "critPower":
-                globalSynergyLabel.setText(gamestate.GetTotalBuildings() + " / " + required + " buildings: " + (next.GetValue() / 100) + "% Critical Power");
-                break;
-            case "critChance":
-                globalSynergyLabel.setText(gamestate.GetTotalBuildings() + " / " + required + " buildings: " + next.GetValue() + "% Critical Chance");
-                break;
-            case "goldenCookie":
-                globalSynergyLabel.setText(gamestate.GetTotalBuildings() + " / " + required + " buildings: " + next.GetValue() + "% Golden Cookie Chance");
-                break;
-            default:
-                break;
-        }
-
-    }
 }

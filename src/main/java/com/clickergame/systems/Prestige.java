@@ -3,12 +3,12 @@ package com.clickergame.systems;
 import java.util.ArrayList;
 
 public class Prestige {
-    private ArrayList<Integer> price;
-    private String targetID;
-    private ArrayList<Double> multiplier;
-    private String name;
-    public Integer upgradeLevel = 0;
-    private boolean purchased = false;
+    private ArrayList<Integer> price; // How much a prestige costs
+    private String targetID; // Which stat will be buffed when a prestige upgrade is bought
+    private ArrayList<Double> multiplier; // How much the stat is buffed
+    private String name; // Prestige's upgrade name
+    public Integer upgradeLevel = 0; // The upgrade's level that can be between 0 and 3
+    private boolean purchased = false; // Check if an upgrade is fully bought
 
     public Prestige(ArrayList<Integer> price, String targetID, ArrayList<Double> multiplier, String name) {
         this.price = price;

@@ -1,18 +1,20 @@
 package com.clickergame.systems;
 
 public class Building {
-    public int price;
-    public int quantity;
-    private double production;
-    private String name;
-    public double multiplier;
-    private String synergyTarget;
-    private double synergyValue;
-    public double synergyBuff;
-    public double priceIncrement;
+    public int price; // Set the building's price which is later incremented by 'multiplier' attribute
+    public int basePrice; // Set the building's base price, does not change 
+    public int quantity; // Set the number of buildings (for each building type)
+    private double production; // Set how much coins a building produces per second
+    private String name; // Set the building's name
+    public double multiplier; // Set how much the production can be multiplied
+    private String synergyTarget; // Set the stat/system that is buffed for each synergy gained
+    private double synergyValue; // Set the synergy's total buff gain
+    public double synergyBuff; // Set the synergy's buff value for each synergy gained
+    public double priceIncrement; // Set the price's multiplier everytime a building is bought
 
-    public Building(String name, int price, int quantity, double production, double multiplier, String synergyTarget, double synergyValue, double synergyBuff, double priceIncrement){
+    public Building(String name, int price, int basePrice, int quantity, double production, double multiplier, String synergyTarget, double synergyValue, double synergyBuff, double priceIncrement){
         this.price = price;
+        this.basePrice = basePrice;
         this.quantity = 0;
         this.production = production;
         this.multiplier = 1.0d;
